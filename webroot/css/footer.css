@@ -1,0 +1,30 @@
+/* Copyright */
+
+.copyright{
+    font-family: "Gotham-Medium";
+    font-size: 19px;
+    background-color:#00000045;
+    position: fixed;
+    bottom: 0;
+    right: 0px;
+    left: 0px;
+    border-top: solid 1px #b5bec3;
+    box-shadow: inset 0px 1px 0px 0px #e0e4e7;
+    text-align: center;
+    padding: 40px 0px 40px 0;
+    color: #ffffff;
+}
+.copyright p{
+    color:#fff;
+    text-align:center;
+    margin-left: 31px;
+}
+.copyright p:first-of-type{
+    margin-top: 6px;
+}
+.imagegithub{
+    margin-right:5px;
+    float: right;
+    width: 43px;
+    height: 43px;
+}

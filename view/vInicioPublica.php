@@ -119,41 +119,7 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Copyright -->
-            <div id="copyright">
-                <p>&copy;2021 Todos los derechos reservados AroaGO----Fecha de Modificación:22/01/2022
-                    <a style="padding-left:10%;" type="application/herramientas" href="#" target="_blank">
-                        <img class="iconoIMG" alt="herramientas" src="./webroot/css/images/herramientas.png" width="40px" height="40px" />
-
-                    </a>
-                    <a type="application/github" href="https://github.com/aroago/208DWESProyectoFinal" target="_blank">
-                        <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/github.png" width="40px" height="40px" />
-
-                    </a>
-                    <a type="application/github" href="#" target="_blank">
-                        <img class="iconoIMG" alt="RSS" src="./webroot/css/images/RSS.png" width="40px" height="40px" />
-
-                    </a>
-                    <a type="application/www" href="https://daw208.ieslossauces.es/" target="_blank">
-                        <img class="iconoIMG" alt="www" src="./webroot/css/images/www.png" width="40px" height="40px" />
-
-                    </a>
-                    <a type="application/doc" href="./doc/index.html" target="_blank">
-                        <img class="iconoIMG" alt="doc" src="./webroot/css/images/doc.png" width="40px" height="40px" />
-
-                    </a>
-                    <a type="application/cv" href="#" target="_blank">
-                        <img class="iconoIMG" alt="cv" src="./webroot/css/images/cv.png" width="40px" height="40px" />
-
-                    </a>
-                    <a type="application/github" href="https://daw208.ieslossauces.es/" target="_blank">
-                        <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/wwwcopia.png" width="40px" height="40px" />
-
-                    </a>
-                </p>
-            </div>
-
+ 
         </div>
 
         <!-- Scripts -->
