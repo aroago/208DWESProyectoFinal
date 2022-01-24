@@ -14,7 +14,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link href="webroot/css/loginRegistro.css" rel="stylesheet" type="text/css" />
     </head>
-    <header>
         <body>
             <div id="page-wrapper">
                 <!-- Header -->
@@ -32,8 +31,6 @@
                             <div class="row">
                                 <div class="col-6 col-12-medium">
 
-
-
                                 </div>
                             </div>
                         </div>
@@ -45,7 +42,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-3 col-6-medium col-12-small">
-                                <form method="Post">
+                                <form method="Post" style="width: 110%;">
                                     <input type="text" name="usuario" id="username"  placeholder="username">
                                     <input type="password" name="password" id="password" placeholder="password">
                                     <input type="submit" name="login" class="btnlogin" value="ENTRAR">

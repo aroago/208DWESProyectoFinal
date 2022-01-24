@@ -31,7 +31,8 @@ $aControladores = [
     'detalle' => 'controller/cDetalle.php',
     'WIP' => 'controller/cWIP.php',
     'error' => 'controller/cError.php',
-    'registro' => 'controller/cRegistro.php'
+    'registro' => 'controller/cRegistro.php',
+    'rest'=> 'controller/cREST.php'
 ];
 
 //Array de las vistas
@@ -43,7 +44,8 @@ $aVistas = [
     'detalle' => 'view/vDetalle.php',
     'WIP' => 'view/vWIP.php',
     'error' => 'view/vError.php',
-    'registro'=> 'view/vRegistro.php'
+    'registro'=> 'view/vRegistro.php',
+    'rest' => 'view/vREST.php'
 ];
 ?>
 

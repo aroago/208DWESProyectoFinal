@@ -17,18 +17,18 @@
 
 //ENTORNO DESARROLLO CASA
 /* IP del servidor y Nombre de la base de datos*/
-//define("HOST", "mysql:dbname=DB208DWESProyectoTema5;host=192.168.1.107");
-/* Usuario con el que se conecta */
-//define("USER", "User208DWESProyectoTema5");
-/* Contraseña con la que conectarse a la base de datos */
-//define("PASSWORD", "P@ssw0rd");
-
-//ENTORNO DESARROLLO CLASE LOCAL
-
-/* IP del servidor y Nombre de la base de datos*/
-define("HOST", "mysql:dbname=DB208DWESProyectoTema5;host=DAW208.sauces.local");
+define("HOST", "mysql:dbname=DB208DWESProyectoTema5;host=192.168.1.107");
 /* Usuario con el que se conecta */
 define("USER", "User208DWESProyectoTema5");
 /* Contraseña con la que conectarse a la base de datos */
 define("PASSWORD", "P@ssw0rd");
+
+//ENTORNO DESARROLLO CLASE LOCAL
+
+/* IP del servidor y Nombre de la base de datos*/
+//define("HOST", "mysql:dbname=DB208DWESProyectoTema5;host=DAW208.sauces.local");
+/* Usuario con el que se conecta */
+//define("USER", "User208DWESProyectoTema5");
+/* Contraseña con la que conectarse a la base de datos */
+//define("PASSWORD", "P@ssw0rd");
 ?>
