@@ -41,7 +41,7 @@
                                             <input type='submit'class="btnlogin"  name='mtoDep' value='Mantenimiento Departamentos'/>
                                             <input type='submit' class="btnlogin" name='detalle' value='Detalle'/>
                                             <input type='submit'class="btnlogin" name='saltarError' value='Saltar_Error'/>
-                                            <input type='submit' class="btnlogin" name='rest' value='REST'/>
+                                            <input type='submit' class="btnlogin" name='rest' value='REST AJENO'/>
                                             <input class="btnlogin" type="submit" name="logout" value="logout"/>
                                         </form>
                                     </div>
