@@ -20,6 +20,7 @@ define("OBLIGATORIO", 1);
 define("OPCIONAL", 0);
 define("MIN_TAMANIO", 0);
 define("RUTA_IMG", "webroot/img/imagenUsuarios/");
+
 //Conexion con la base de datos.
 include 'config/configDB.php';
 
@@ -32,7 +33,8 @@ $aControladores = [
     'WIP' => 'controller/cWIP.php',
     'error' => 'controller/cError.php',
     'registro' => 'controller/cRegistro.php',
-    'rest'=> 'controller/cREST.php'
+    'rest'=> 'controller/cREST.php',
+    'miCuenta' => 'controller/cMiCuenta.php'
 ];
 
 //Array de las vistas
@@ -45,7 +47,8 @@ $aVistas = [
     'WIP' => 'view/vWIP.php',
     'error' => 'view/vError.php',
     'registro'=> 'view/vRegistro.php',
-    'rest' => 'view/vREST.php'
+    'rest' => 'view/vREST.php',
+    'miCuenta' => 'view/vMiCuenta.php'
 ];
 ?>
 

@@ -31,7 +31,7 @@
          */
         ?>
         <header>
-            <h1>Detalle  LoginLogout</h1>
+            <h1>Detalle  AGO</h1>
         </header>
         <form>
             <input type="submit" value="volver" name="volver" class="button"/>

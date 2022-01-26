@@ -26,6 +26,13 @@ if (isset($_REQUEST['rest'])) {
     header('location: ./index.php');
     exit;
 }
+if (isset($_REQUEST['miCuenta'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'miCuenta';
+
+    header('location: ./index.php');
+    exit;
+}
 if (isset($_REQUEST['mtoDep'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'WIP';

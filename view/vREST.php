@@ -9,7 +9,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>LoginLogOut Proyecto Final</title>
+        <title>AGO Proyecto Final</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link href="webroot/css/loginRegistro.css" rel="stylesheet" type="text/css" />
@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col-12">
                             <!-- Logo -->
-                            <h1><a href="index.html" id="logo">LoginLogOut Proyecto Final 2021-2022 <br>REST AJENO</a></h1>
+                            <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br>REST</a></h1>
                             <nav id="nav">
                                 <form method="post">
                                     <input type="submit" name="volver" class="btnlogin" value="volver">
@@ -37,7 +37,7 @@
                             <div class="col-6 col-12-medium">
                                 <form method="post">
                                     
-                                    <input  type="search" name="buscarInput" placeholder="Nombre Ciudad" value="<?php
+                                    <input  type="search" name="buscarInput" placeholder="Código Provincia" value="<?php
                                         if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
                                             echo $_REQUEST["buscarInput"]; //Devuelve el campo que ha escrito previamente el usuario.
                                         }
