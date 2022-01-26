@@ -23,6 +23,11 @@
                         <div class="col-12">
                             <!-- Logo -->
                             <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> Mi Cuenta</a></h1>
+                            <nav id="nav">
+                                <form method="post">
+                                    <input type="submit" name="cancelar" class="btnlogin" value="volver">
+                                </form>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -43,16 +48,14 @@
                     <div class="row">
                         <div class="col-3 col-6-medium col-12-small">
                             <div id="containerRegistro">
-                                    <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                                    <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" >
                                         <h3>Usuario: </h3>
                                         <input  type="text" name="CodUsuario" value="<?php echo $aVMiCuenta['CodUsuario'] ?>" disabled/>
                                         <br>
 
                                         <h3>Descripción de usuario: </h3>
                                         <input  type="text" name="DescUsuario" value="<?php
-                                        if ($aErrores["DescUsuario"] == null && isset($_REQUEST["DescUsuario"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
-                                            echo $_REQUEST["DescUsuario"]; //Devuelve el campo que ha escrito previamente el usuario.
-                                        }
+                                            echo $aVMiCuenta['DescUsuario']; 
                                         ?>">
                                         <span style="color:red">
                                             <?php
@@ -74,8 +77,12 @@
                                         <input type="submit" name="cambiarPassword" class="btnlogin" value="Cambiar Contraseña">
                                         <br>
                                         
+                                        <h3>Imagen: </h3>
+                                        <input name="archivo" id="archivo" type="file"/>
+                                        <br>
+                                        
                                         <input type="submit" name="btnMiCuenta" class="btnlogin" value="ACEPTAR">
-                                        <input style="background: rgba(255, 3, 3, 0.3);" type="submit" name="cancelar" class="btnlogin" value="CANCELAR">
+                                        <input style="background: rgba(255, 3, 3, 0.3);" type="submit" name="borrarCuenta" class="btnlogin" value="Eliminar Cuenta">
                                     </form>
                                 </div>
                         </div>

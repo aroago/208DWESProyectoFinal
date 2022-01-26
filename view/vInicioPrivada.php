@@ -14,7 +14,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link href="webroot/css/loginRegistro.css" rel="stylesheet" type="text/css" />
     </head>
-    <header>
         <body>
             <div id="page-wrapper">
                 <!-- Header -->

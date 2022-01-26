@@ -72,15 +72,16 @@ class UsuarioPDO implements UsuarioDB {
         return $oUsuario;
     }
 
-    public static function modificarUsuario($oUsuario, $descUsuario, $imagenUsuario = null) {
+    public static function modificarUsuario($oUsuario, $descUsuario, $imagenUsuario) {
+        $codUsuario = $oUsuario->getCodUsuario();
         $sUpdate = <<<QUERY
             UPDATE T01_Usuario SET T01_DescUsuario = "{$descUsuario}",
             T01_ImagenUsuario = '{$imagenUsuario}'
-            WHERE T01_CodUsuario = "{$oUsuario}";
+            WHERE T01_CodUsuario = "{$codUsuario}";
         QUERY;
 
         $oUsuario->setDescUsuario($descUsuario);
-        // $oUsuario->setImagenUsuario($imagenUsuario);
+        $oUsuario->setImagenUsuario($imagenUsuario);
 
         if (DBPDO::ejecutarConsulta($sUpdate)) {
             return $oUsuario;

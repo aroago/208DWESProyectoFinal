@@ -7,6 +7,7 @@
  * Last modification: 11/1/2022
  */
 require_once "core/libreriaValidacion.php";
+require_once "core/libreriaFunciones.php";
 
 include 'model/DB.php';
 include 'model/UsuarioDB.php';
@@ -34,7 +35,9 @@ $aControladores = [
     'error' => 'controller/cError.php',
     'registro' => 'controller/cRegistro.php',
     'rest'=> 'controller/cREST.php',
-    'miCuenta' => 'controller/cMiCuenta.php'
+    'miCuenta' => 'controller/cMiCuenta.php',
+    'borrarCuenta' => 'controller/cBorrarCuenta.php',
+    'cambiarPassword' => 'controller/cCambiarPassword.php'
 ];
 
 //Array de las vistas
@@ -48,7 +51,9 @@ $aVistas = [
     'error' => 'view/vError.php',
     'registro'=> 'view/vRegistro.php',
     'rest' => 'view/vREST.php',
-    'miCuenta' => 'view/vMiCuenta.php'
+    'miCuenta' => 'view/vMiCuenta.php',
+    'borrarCuenta' => 'view/vBorrarCuenta.php',
+    'cambiarPassword' => 'view/vCambiarPassword.php'
 ];
 ?>
 
