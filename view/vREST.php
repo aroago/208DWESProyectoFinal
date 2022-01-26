@@ -63,41 +63,51 @@
             <section id="features">
                 <div class="container">
                     <div class="row">
-                        <div class="col-3 col-6-medium col-12-small">
+                        <div class="col-3b col-6-medium col-12-small">
                             <h1 class="mensajeRest">
+                                <span class="tituloRest"> Resultado:</span> <?php
+                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])&& isset( $_SESSION['APIrestSinFiltro'])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
+                                            print_r($_SESSION['APIrest']); //Devuelve el campo que ha escrito previamente el usuario.
+                                        }
+                                        ?>
+                                <br>
                                 <span class="tituloRest"> Provincia:</span> <?php
-                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
-                                            echo $_SESSION['APIrest']['nameProvince']; //Devuelve el campo que ha escrito previamente el usuario.
+                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])&& isset($_SESSION['APIrest'])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
+                                            echo $_SESSION['APIrest']['title']; //Devuelve el campo que ha escrito previamente el usuario.
                                         }
                                         ?>
                             </h1>
                             <h1 class="mensajeRest">
                                 <span class="tituloRest">ID Provincia:</span> <?php
-                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
-                                            echo $_SESSION['APIrest']['idProvince']; //Devuelve el campo que ha escrito previamente el usuario.
+                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])&& isset($_SESSION['APIrest'])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
+                                            echo $_SESSION['APIrest']['ciudades']['0']['idProvince']; //Devuelve el campo que ha escrito previamente el usuario.
                                         }
                                         ?>
                             </h1>
                             <h1 class="mensajeRest">
                                 <span class="tituloRest"> Descripcion:</span><?php
-                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
-                                            echo $_SESSION['APIrest']['stateSky']['description']; //Devuelve el campo que ha escrito previamente el usuario.
+                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"]) && isset($_SESSION['APIrest'])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
+                                            echo $_SESSION['APIrest']['ciudades']['0']['stateSky']['description']; //Devuelve el campo que ha escrito previamente el usuario.
                                         }
                                         ?>
                             </h1>
                             <h1 class="mensajeRest">
-                                <span class="tituloRest"> Temperaturas:</span>
+                                <span class="tituloRest"> Tiempo:</span><?php
+                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])&& isset($_SESSION['APIrest'])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
+                                            echo$_SESSION['APIrest']['today']['p']; //Devuelve el campo que ha escrito previamente el usuario.
+                                        }
+                                        ?>
 
                             </h1>
                             <h1 class="mensajeRest">
                                 <span class="tituloRest"> MAX:</span><?php
-                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
-                                            echo$_SESSION['APIrest']['temperatures']['max']; //Devuelve el campo que ha escrito previamente el usuario.
+                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])&& isset($_SESSION['APIrest'])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
+                                            echo$_SESSION['APIrest']['ciudades']['0']['temperatures']['max']; //Devuelve el campo que ha escrito previamente el usuario.
                                         }
                                         ?>
                                 <span class="tituloRest"> MIN:</span><?php
-                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
-                                            echo $_SESSION['APIrest']['temperatures']['min']; //Devuelve el campo que ha escrito previamente el usuario.
+                                        if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])&& isset($_SESSION['APIrest'])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
+                                            echo $_SESSION['APIrest']['ciudades']['0']['temperatures']['min']; //Devuelve el campo que ha escrito previamente el usuario.
                                         }
                                         ?>
                             </h1>

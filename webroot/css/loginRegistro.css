@@ -122,7 +122,8 @@ h3{
 .container {
     margin: 0 auto;
     max-width: 100%;
-    width: 1470px;
+    width: 1700px;
+    padding: 10px;
 }
 
 @media screen and (max-width: 1680px) {
@@ -223,7 +224,9 @@ h3{
 .row > .col-3 {
     width: 50%;
 }
-
+.row > .col-3b {
+    width: 100%;
+}
 .row > .off-3 {
     margin-left: 25%;
 }
@@ -2037,7 +2040,8 @@ h3{
 
 }
 .mensajeRest{
-    font-size: 53px;
+    font-size: 16px;
+    font-family: sans-serif;
     margin-bottom: 30px;
     color: rgb(0, 0, 0);
 
