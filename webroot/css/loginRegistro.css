@@ -2061,3 +2061,10 @@ h3{
     align-items: center;
     justify-content: center;
 }
+#imagenPrevisualizacion{
+    position: absolute;
+    top: 37%;
+    left: 62%;
+    width: 350px;
+    height: 350px;
+}
