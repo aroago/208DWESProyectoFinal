@@ -1,9 +1,11 @@
 <?php
 
+include 'model/REST.php';
+
 $bEntradaOK = true;
 // Variable de mensaje de error.
 $aErrores = ['eBuscarInput' => null,
-    'eNoEncontrada' => null];
+    'eResultado' => null];
 
 $ciudadEncontrada = false;
 
@@ -17,12 +19,11 @@ if (isset($_REQUEST['volver'])) {
 }
 
 if (isset($_REQUEST['buscarSubmit'])) {
-    $aErrores['eBuscarInput'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST["buscarInput"], 255, 2, OBLIGATORIO);
+    $aErrores['eBuscarInput'] = validacionFormularios::comprobarEntero($_REQUEST['buscarInput'], 52, 1, OBLIGATORIO);
 
 
     if ($aErrores['eBuscarInput'] != null) {//si ha habido fallos en el array
-        $aErrores['eBuscarInput'] = "minimo 2 numeros";
-        unset($_SESSION['APIrest']);
+        
         $_REQUEST['buscarSubmit'] = "";
         $bEntradaOK = false;
     }
@@ -34,11 +35,13 @@ if (isset($_REQUEST['buscarSubmit'])) {
 }
 if ($bEntradaOK) {//utilizacion de la web service cuando bEntrada=true
     
-        $sResultadoSinFiltro = file_get_contents('https://www.el-tiempo.net/api/json/v2/provincias/' . $_REQUEST['buscarInput']); //devuelve un String del contenido JSON
-
-        $aJson = json_decode($sResultadoSinFiltro, true); //decodificamos el json y lo devolvemos en un array
-        $_SESSION['APIrest'] = $aJson;
+  $oResultadoProv= REST::provincia($_REQUEST['buscarInput']);
+  
+  if ($oResultadoProv == null){
+      $aErrores["eResultado"]="Provincia no encontrada";
+  }
        
 }
+
 include $aVistas['layout'];
 ?>

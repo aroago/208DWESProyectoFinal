@@ -115,7 +115,13 @@ class UsuarioPDO implements UsuarioDB {
             return false;
         }
     }
+public static function mostrarUsuarios() {
+        $sMostrar = <<<QUERY
+            select * FROM T01_Usuario;
+        QUERY;
 
+        return DBPDO::ejecutarConsulta($sMostrar);
+    }
     /**
      * Eliminación de usuario.
      * 

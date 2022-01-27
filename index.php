@@ -9,7 +9,6 @@
 ob_start();
 //Constantes de la aplicación.
 require_once './config/configApp.php';
-
 //Se inicia o recupera la sesión
 session_start();
 
