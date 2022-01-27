@@ -2,8 +2,8 @@
 /*
  * @author: Aroa Granero Omañas
  * @version: v1
- * Created on: 11/1/2022
- * Last modification: 11/1/2022
+ * Created on: 26/1/2022
+ * Last modification: 26/1/2022
  */
 ?>
 <!DOCTYPE HTML>
@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <!-- Logo -->
-                                <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> Login</a></h1>
+                                <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> BorrarCuenta</a></h1>
                             </div>
                         </div>
                     </div>
@@ -42,11 +42,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-3 col-6-medium col-12-small">
+                                <h1>DESEAS BORRAR CUENTA?</h1>
                                 <form method="Post" style="width: 110%;">
-                                    <input type="text" name="usuario" id="username"  placeholder="username">
-                                    <input type="password" name="password" id="password" placeholder="password">
-                                    <input type="submit" name="login" class="btnlogin" value="ENTRAR">
-                                    <input type="submit" name="registro" class="btnlogin" value="REGISTRATE">
+                                    <input type="submit" name="no" class="btnlogin" value="no">
+                                    <input type="submit" name="si" class="btnlogin" value="si">
                                 </form>
                             </div>
                         </div>
@@ -64,3 +63,4 @@
 
         </body>
 </html>
+

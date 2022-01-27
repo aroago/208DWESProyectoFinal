@@ -9,12 +9,11 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>LoginLogOut Proyecto Final</title>
+        <title>AGO Proyecto Final</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link href="webroot/css/loginRegistro.css" rel="stylesheet" type="text/css" />
     </head>
-    <header>
         <body>
             <div id="page-wrapper">
                 <!-- Header -->
@@ -23,11 +22,14 @@
                         <div class="row">
                             <div class="col-12">
                                 <!-- Logo -->
-                                <h1><a href="index.html" id="logo">LoginLogOut Proyecto Final 2021-2022 <br> Inicio Privada</a></h1>
+                                <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> Inicio Privada</a></h1>
                                 <nav id="nav">
                                     <img id="imagenUsuario" src="<?php print($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getImagenUsuario()) ?>">
+                                    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="formularioInicioPrivada">
+                                        <input type='submit' class="btnlogin" name='miCuenta' value='Mi Cuenta'/>
+                                    </form>
                                 </nav>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -41,7 +43,7 @@
                                             <input type='submit'class="btnlogin"  name='mtoDep' value='Mantenimiento Departamentos'/>
                                             <input type='submit' class="btnlogin" name='detalle' value='Detalle'/>
                                             <input type='submit'class="btnlogin" name='saltarError' value='Saltar_Error'/>
-                                            <input type='submit' class="btnlogin" name='rest' value='REST AJENO'/>
+                                            <input type='submit' class="btnlogin" name='rest' value='REST'/>
                                             <input class="btnlogin" type="submit" name="logout" value="logout"/>
                                         </form>
                                     </div>
@@ -58,6 +60,7 @@
 
 
                             <?php if ($_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getNumConexiones() <= 1) { ?>
+                                <h1 class="mensajePrivada"><?php echo "Bienvenid@ " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getDescUsuario() ?></h1>
                                 <h1 class="mensajePrivada"><?php echo "Esta es la primera vez que te conectas!" ?></h1>
                                 <?php
                             } else {

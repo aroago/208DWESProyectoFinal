@@ -12,7 +12,7 @@ if (isset($_REQUEST['cancelar'])) {
     exit;
 }
 
- $bEntradaOK = true;
+$bEntradaOK = true;
 // Variable de mensaje de error.
 $aErrores = ['CodUsuario' => null, //Creo un array de errores y lo inicializo a null con los campos correspondientes.
     'DescUsuario' => null,
@@ -22,22 +22,22 @@ $aErrores = ['CodUsuario' => null, //Creo un array de errores y lo inicializo a 
  * Si se selecciona crear usuario, valida la entrada y comprueba que el usuario
  * no exista ya en la base de datos.
  */
-if(isset($_REQUEST['aceptarRegistro'])) {
+if (isset($_REQUEST['aceptarRegistro'])) {
     $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 255, 3, OBLIGATORIO);
-    
-    if($aErrores['CodUsuario']==null && UsuarioPDO::validarCodNoExiste($_REQUEST['CodUsuario'])==false){ 
-        
-        $aErrores['CodUsuario']="El nombre de usuario ya existe";
+
+    if ($aErrores['CodUsuario'] == null && UsuarioPDO::validarCodNoExiste($_REQUEST['CodUsuario']) == false) {
+
+        $aErrores['CodUsuario'] = "El nombre de usuario ya existe";
     }
-    
+
     $aErrores['DescUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'], 255, 3, OBLIGATORIO);
-    
+
     $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);
     $aErrores['ConfirmarPassword'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);
-    if($_REQUEST['Password'] != $_REQUEST['ConfirmarPassword']){
+    if ($_REQUEST['Password'] != $_REQUEST['ConfirmarPassword']) {
         $aErrores['ConfirmarPassword'] = "Las contraseñas no coinciden";
     }
-    
+
     foreach ($aErrores as $campo => $error) { //Recorro cada campo del array de errores.
         if ($error != null) { //Si hay algún error.
             $bEntradaOK = false;
@@ -55,16 +55,22 @@ if(isset($_REQUEST['aceptarRegistro'])) {
  * iniciar sesión y enviar a la página de inicio.
  */
 if ($bEntradaOK) {
-    
+
     $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['CodUsuario'], $_REQUEST['Password'], $_REQUEST['DescUsuario']);
 
-  
+
     // Almacenamiento del usuario y la fecha-hora de última conexión.
     unset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']);
     $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'] = $oUsuario;
-
+    
+    $path = RUTA_IMG.$_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getCodUsuario();
+    
+    if (!file_exists($path)) {
+        mkdir($path, 0777, true);
+    }
+    
     $_SESSION['paginaEnCurso'] = 'inicio';
-     
+
     header('Location: index.php');
     exit;
 }

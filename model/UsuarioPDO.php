@@ -40,16 +40,15 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function validarCodNoExiste($codUsuario) {
         $usuarioNoExiste = true;
-        
+
         $consulta = "Select * from T01_Usuario where T01_CodUsuario=?";
-        $resultado = DBPDO::ejecutarConsulta($consulta,[$codUsuario]);
-        
+        $resultado = DBPDO::ejecutarConsulta($consulta, [$codUsuario]);
+
         if ($resultado->rowCount() > 0) {
             $usuarioNoExiste = false;
         }
-        
+
         return $usuarioNoExiste;
-       
     }
 
     /**
@@ -62,15 +61,82 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function altaUsuario($codUsuario, $password, $descripcion) {
         $oUsuario = null;
-        
+
         $consulta = "Insert into T01_Usuario (T01_CodUsuario, T01_DescUsuario, T01_Password , T01_NumConexiones, T01_FechaHoraUltimaConexion) values (?,?,?,1,?)";
         $passwordEncriptado = hash("sha256", ($codUsuario . $password));
         $resultado = DBPDO::ejecutarConsulta($consulta, [$codUsuario, $descripcion, $passwordEncriptado, time()]);
 
         if ($resultado->rowCount() > 0) {
-            $oUsuario=self::validarUsuario($codUsuario, $password);       
+            $oUsuario = self::validarUsuario($codUsuario, $password);
         }
         return $oUsuario;
+    }
+
+    public static function modificarUsuario($oUsuario, $descUsuario, $imagenUsuario) {
+        $codUsuario = $oUsuario->getCodUsuario();
+        $sUpdate = <<<QUERY
+            UPDATE T01_Usuario SET T01_DescUsuario = "{$descUsuario}",
+            T01_ImagenUsuario = '{$imagenUsuario}'
+            WHERE T01_CodUsuario = "{$codUsuario}";
+        QUERY;
+
+        $oUsuario->setDescUsuario($descUsuario);
+        $oUsuario->setImagenUsuario($imagenUsuario);
+
+        if (DBPDO::ejecutarConsulta($sUpdate)) {
+            return $oUsuario;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Cambio de contraseña.
+     * 
+     * Modifica la contraseña del usuario indicado en la base de datos y en el
+     * objeto antes de devolverlo.
+     * 
+     * @param Usuario $usuario Usuario a modificar.
+     * @param String $password Nueva contraseña del usuario.
+     * @return Usuario|false Devuelve el objeto usuario modificado si todo es correcto,
+     * o false en caso contrario.
+     */
+    public static function cambiarPassword($usuario, $password) {
+        $sUpdate = <<<QUERY
+            UPDATE T01_Usuario SET T01_Password = SHA2("{$usuario->getCodUsuario()}{$password}", 256)
+            WHERE T01_CodUsuario = "{$usuario->getCodUsuario()}";
+        QUERY;
+
+        $usuario->setPassword($descUsuario);
+
+        if (DBPDO::ejecutarConsulta($sUpdate)) {
+            return $usuario;
+        } else {
+            return false;
+        }
+    }
+public static function mostrarUsuarios() {
+        $sMostrar = <<<QUERY
+            select * FROM T01_Usuario;
+        QUERY;
+
+        return DBPDO::ejecutarConsulta($sMostrar);
+    }
+    /**
+     * Eliminación de usuario.
+     * 
+     * Elimina el usuario dado de la base de datos.
+     * 
+     * @param Usuario $usuario Usuario a ser eliminado.
+     * @return PDOStatement Resultado del delete.
+     */
+    public static function borrarUsuario($usuario) {
+        $sDelete = <<<QUERY
+            DELETE FROM T01_Usuario
+            WHERE T01_CodUsuario='{$usuario->getCodUsuario()}';
+        QUERY;
+
+        return DBPDO::ejecutarConsulta($sDelete);
     }
 
     public static function registrarUltimaConexion($codigoUsuario) {

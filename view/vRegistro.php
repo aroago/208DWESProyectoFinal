@@ -9,7 +9,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>LoginLogOut Proyecto Final</title>
+        <title>AGO Proyecto Final</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link href="webroot/css/loginRegistro.css" rel="stylesheet" type="text/css" />
@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col-12">
                             <!-- Logo -->
-                            <h1><a href="index.html" id="logo">LoginLogOut Proyecto Final 2021-2022 <br> Registro</a></h1>
+                            <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> Registro</a></h1>
                         </div>
                     </div>
                 </div>

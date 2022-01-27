@@ -17,7 +17,7 @@
         <meta name="description" content="Inicio de la pagina web">
         <meta name="keywords" content=" index" >
         <meta name="robots" content="index, follow" />
-        <title>App Login-Logout POO</title>
+        <title>App AGO POO</title>
         <link rel="shortcut icon" href="favicon.ico">
         <link href="webroot/css/footer.css" rel="stylesheet" type="text/css" />
         <style>
