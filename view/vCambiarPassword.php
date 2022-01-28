@@ -25,7 +25,7 @@
                             <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> Cambiar Password</a></h1>
                             <nav id="nav">
                                 <form method="post">
-                                    <input type="submit" name="cancelar" class="btnlogin" value="volver">
+                                    <input type="submit" name="volver" class="btnlogin" value="volver">
                                 </form>
                             </nav>
                         </div>
@@ -54,20 +54,14 @@
                                     <input  type="password" name="passwordActual" />
                                     <br>
                                     <span style="color:red">
-                                        <?php
-                                        if ($aErrores["passwordActual"] != null) { //Compruebo que el array de errores no está vacío.
-                                            echo $aErrores["passwordActual"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
-                                        }
+                                        <?php echo $aErrores["passwordActual"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
                                         ?>
                                     </span>
                                     <h3>Nueva Contraseña: </h3>
                                     <input  type="password" name="passwordNueva" />
                                     <br>
                                     <span style="color:red">
-                                        <?php
-                                        if ($aErrores["passwordNueva"] != null) { //Compruebo que el array de errores no está vacío.
-                                            echo $aErrores["passwordNueva"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
-                                        }
+                                        <?phpecho $aErrores["passwordNueva"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
                                         ?>
                                     </span>
                                     <h3>Repite Contraseña: </h3>
@@ -75,10 +69,8 @@
                                     <br>
                                     <span style="color:red">
                                         <?php
-                                        if ($aErrores["passwordRepeticion"] != null) { //Compruebo que el array de errores no está vacío.
                                             echo $aErrores["passwordRepeticion"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
-                                        }
-                                        ?>
+                                          ?>
                                     </span>
                                     <input type="submit" name="cambiar" class="btnlogin" value="Cambiar Password">
                                     <input style="background: rgba(255, 3, 3, 0.3);" type="submit" name="Cancelar" class="btnlogin" value="Cancelar">

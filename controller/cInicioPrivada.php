@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * @author: Aroa Granero Omañas
+ * @version: v1
+ * Created on: 26/1/2022
+ * Last modification: 26/1/2022
+ */
 if (!isset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'])) {
     header('location: ./index.php');
     exit;
