@@ -61,7 +61,7 @@
                                     <input  type="password" name="passwordNueva" />
                                     <br>
                                     <span style="color:red">
-                                        <?phpecho $aErrores["passwordNueva"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
+                                        <?php echo $aErrores["passwordNueva"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
                                         ?>
                                     </span>
                                     <h3>Repite Contraseña: </h3>
