@@ -15,6 +15,7 @@ include 'model/DBPDO.php';
 include 'model/Usuario.php';
 include 'model/UsuarioPDO.php';
 include 'model/AppError.php';
+require_once 'model/Libro.php';
 
 //Definir constantes
 define("OBLIGATORIO", 1);
