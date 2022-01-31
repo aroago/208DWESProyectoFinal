@@ -14,7 +14,7 @@ $aRespuestas=[
         "busquedaLibro" =>""
     ];
     
-$ciudadEncontrada = false;
+
 
 
 if (isset($_REQUEST['volver'])) {

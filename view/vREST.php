@@ -106,7 +106,7 @@
                                 </h1>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest"> MAX:</span><?php
-                                    echo$oResultadoProv->getTemperaturaMax(); //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo $oResultadoProv->getTemperaturaMax(); //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                     <span class="tituloRest"> MIN:</span><?php
                                     echo $oResultadoProv->getTemperaturaMin(); //Devuelve el campo que ha escrito previamente el usuario.
