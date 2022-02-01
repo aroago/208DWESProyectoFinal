@@ -65,9 +65,6 @@ if($bEntradaOKLibros){
         
         $aLibros=REST::buscarLibrosPorTitulo($aRespuestas['busquedaLibro']);
         
-        /*$resultadoAPI=file_get_contents("https://www.googleapis.com/books/v1/volumes?q=".$aRespuestas['busqueda']);
-        $aResultadoAPI=json_decode($resultadoAPI,true);*/
-        
         $aVistaREST=[];
         $indice=0;
         
