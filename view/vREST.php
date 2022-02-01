@@ -45,65 +45,61 @@
                                             Gobierno de España, que autoriza el uso de la información y reproducción citando a © AEMET como autora de la misma.</p>
                                     </div> 
                                     <p style=" text-align: justify;font-size: 20px; font-weight: 50;"><a target="_blank" href="https://www.ine.es/daco/daco42/codmun/cod_provincia.htm" style="color:white; font-weight: 100;">Consulta los codigos de las provincias</a></p>
-                                    <input  type="search" name="buscarInput" placeholder="Código Provincia" value="<?php
-                                    if ($aErrores["eBuscarInput"] == null && isset($_REQUEST["buscarInput"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar.
-                                        echo $_REQUEST["buscarInput"]; //Devuelve el campo que ha escrito previamente el usuario.
-                                    }
-                                    ?>">
-                                    <select required name="provincia" class="form-control">
+                                    
+                                    <select required name="buscarInput" class="form-control">
                                         <option value="">Elige Provincia</option>
-                                        <option value="Álava/Araba">Álava/Araba</option>
-                                        <option value="Albacete">Albacete</option>
-                                        <option value="Alicante">Alicante</option>
-                                        <option value="Almería">Almería</option>
-                                        <option value="Asturias">Asturias</option>
-                                        <option value="Ávila">Ávila</option>
-                                        <option value="Badajoz">Badajoz</option>
-                                        <option value="Baleares">Baleares</option>
-                                        <option value="Barcelona">Barcelona</option>
-                                        <option value="Burgos">Burgos</option>
-                                        <option value="Cáceres">Cáceres</option>
-                                        <option value="Cádiz">Cádiz</option>
-                                        <option value="Cantabria">Cantabria</option>
-                                        <option value="Castellón">Castellón</option>
-                                        <option value="Ceuta">Ceuta</option>
-                                        <option value="Ciudad Real">Ciudad Real</option>
-                                        <option value="Córdoba">Córdoba</option>
-                                        <option value="Cuenca">Cuenca</option>
-                                        <option value="Gerona/Girona">Gerona/Girona</option>
-                                        <option value="Granada">Granada</option>
-                                        <option value="Guadalajara">Guadalajara</option>
-                                        <option value="Guipúzcoa/Gipuzkoa">Guipúzcoa/Gipuzkoa</option>
-                                        <option value="Huelva">Huelva</option>
-                                        <option value="Huesca">Huesca</option>
-                                        <option value="Jaén">Jaén</option>
-                                        <option value="La Coruña/A Coruña">La Coruña/A Coruña</option>
-                                        <option value="La Rioja">La Rioja</option>
-                                        <option value="Las Palmas">Las Palmas</option>
-                                        <option value="León">León</option>
-                                        <option value="Lérida/Lleida">Lérida/Lleida</option>
-                                        <option value="Lugo">Lugo</option>
-                                        <option value="Madrid">Madrid</option>
-                                        <option value="Málaga">Málaga</option>
-                                        <option value="Melilla">Melilla</option>
-                                        <option value="Murcia">Murcia</option>
-                                        <option value="Navarra">Navarra</option>
-                                        <option value="Orense/Ourense">Orense/Ourense</option>
-                                        <option value="Palencia">Palencia</option>
-                                        <option value="Pontevedra">Pontevedra</option>
-                                        <option value="Salamanca">Salamanca</option>
-                                        <option value="Segovia">Segovia</option>
-                                        <option value="Sevilla">Sevilla</option>
-                                        <option value="Soria">Soria</option>
-                                        <option value="Tarragona">Tarragona</option>
-                                        <option value="Tenerife">Tenerife</option>
-                                        <option value="Teruel">Teruel</option>
-                                        <option value="Toledo">Toledo</option>
-                                        <option value="Valencia">Valencia</option>
-                                        <option value="Valladolid">Valladolid</option>
-                                        <option value="Vizcaya/Bizkaia">Vizcaya/Bizkaia</option>
-                                        <option value="Zamora">Zamora</option>
-                                        <option value="Zaragoza">Zaragoza</option>
+                                        <option value="01">Álava/Araba</option>
+                                        <option value="02">Albacete</option>
+                                        <option value="03">Alicante</option>
+                                        <option value="04">Almería</option>
+                                        <option value="33">Asturias</option>
+                                        <option value="05">Ávila</option>
+                                        <option value="06">Badajoz</option>
+                                        <option value="08">Barcelona</option>
+                                        <option value="48">Bizkaia</option>
+                                        <option value="10">Cáceres</option>
+                                        <option value="11">Cádiz</option>
+                                        <option value="12">Castellón</option>
+                                        <option value="09">Catalunya</option>
+                                        <option value="39">Cantabria</option>
+                                        <option value="13">Ciudad Real</option>
+                                        <option value="14">Córdoba</option>
+                                        <option value="51">Ceuta</option>
+                                        <option value="16">Cuenca</option>
+                                        <option value="17">Gerona/Girona</option>
+                                        <option value="18">Granada</option>
+                                        <option value="19">Guadalajara</option>
+                                        <option value="20">Guipúzcoa/Gipuzkoa</option>
+                                        <option value="21">Huelva</option>
+                                        <option value="22">Huesca</option>
+                                        <option value="23">Jaén</option>
+                                        <option value="15">La Coruña/A Coruña</option>
+                                        <option value="26">La Rioja</option>
+                                        <option value="35">Las Palmas</option>
+                                        <option value="24">León</option>
+                                        <option value="25">Lérida/Lleida</option>
+                                        <option value="27">Lugo</option>
+                                        <option value="28">Madrid</option>
+                                        <option value="29">Málaga</option>
+                                        <option value="52">Melilla</option>
+                                        <option value="30">Murcia</option>
+                                        <option value="31">Navarra</option>
+                                        <option value="32">Orense/Ourense</option>
+                                        <option value="34">Palencia</option>
+                                        <option value="36">Pontevedra</option>
+                                        <option value="37">Salamanca</option>
+                                        <option value="40">Segovia</option>
+                                        <option value="41">Sevilla</option>
+                                        <option value="42">Soria</option>
+                                        <option value="43">Tarragona</option>
+                                        <option value="38">Tenerife</option>
+                                        <option value="44">Teruel</option>
+                                        <option value="45">Toledo</option>
+                                        <option value="46">Valencia</option>
+                                        <option value="47">Valladolid</option>
+                                        <option value="51">Vizcaya/Bizkaia</option>
+                                        <option value="49">Zamora</option>
+                                        <option value="50">Zaragoza</option>
                                     </select>
                                     <input type="submit" class="btnlogin" name="buscarSubmit"/>
                                     <br>
