@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col-12">
                             <!-- Logo -->
-                            <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> Cambiar Password</a></h1>
+                            <h1><a href="index.php" id="logo">AGO Proyecto Final 2021-2022 <br> Cambiar Password</a></h1>
                             <nav id="nav">
                                 <form method="post">
                                     <input type="submit" name="volver" class="btnlogin" value="volver">

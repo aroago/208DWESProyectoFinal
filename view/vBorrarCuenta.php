@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <!-- Logo -->
-                                <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br> BorrarCuenta</a></h1>
+                                <h1><a href="index.php" id="logo">AGO Proyecto Final 2021-2022 <br> BorrarCuenta</a></h1>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-12">
                             <!-- Logo -->
-                            <h1><a href="index.html" id="logo">AGO Proyecto Final 2021-2022 <br>REST</a></h1>
+                            <h1><a href="index.php" id="logo">AGO Proyecto Final 2021-2022 <br>REST</a></h1>
                             <nav id="nav">
                                 <form method="post">
                                     <input type="submit" name="volver" class="btnlogin" value="volver">
@@ -45,7 +45,6 @@
                                             Gobierno de España, que autoriza el uso de la información y reproducción citando a © AEMET como autora de la misma.</p>
                                     </div> 
                                     <p style=" text-align: justify;font-size: 20px; font-weight: 50;"><a target="_blank" href="https://www.ine.es/daco/daco42/codmun/cod_provincia.htm" style="color:white; font-weight: 100;">Consulta los codigos de las provincias</a></p>
-                                    
                                     <select required name="buscarInput" class="form-control">
                                         <option value="">Elige Provincia</option>
                                         <option value="01">Álava/Araba</option>
@@ -56,11 +55,11 @@
                                         <option value="05">Ávila</option>
                                         <option value="06">Badajoz</option>
                                         <option value="08">Barcelona</option>
+                                        <option value="09">Burgos</option>
                                         <option value="48">Bizkaia</option>
                                         <option value="10">Cáceres</option>
                                         <option value="11">Cádiz</option>
                                         <option value="12">Castellón</option>
-                                        <option value="09">Catalunya</option>
                                         <option value="39">Cantabria</option>
                                         <option value="13">Ciudad Real</option>
                                         <option value="14">Córdoba</option>
@@ -115,21 +114,6 @@
                                     </span>
                                 </form>
                             </div>
-                            <div class="col-6">
-
-                                <form action="index.php" method="post">
-                                    <legend>Busqueda de Libros <a href="https://developers.google.com/books/docs/v1/getting_started" target="_blank"><i class="bi bi-info-circle-fill"></i></a></legend>
-                                    <div style="with:50%;height: 30%;border:solid 2px #000; word-break:break-all;background: rgba(0, 0, 0, 0.486);padding: 20px 0px 0px 20px;margin-bottom: 5px">
-                                        <p style=" text-align: justify;font-size: 18px; font-weight: 50;">Servicio web que sirve para consultar un libro. No necesariamente busca por título, pero es su prioridad. 
-                                            (p. ej. si buscas un autor primero mostrará libros en cuyo título esté su nombre). Puede buscar los carácteres 
-                                            introducidos en cualquier campo de su base de datos de libros.</p>
-                                    </div>    
-                                    <input name="busquedaLibro" type="text" placeholder="Buscar Libro" value="<?php echo $_REQUEST['busquedaLibro'] ?? "" ?>">
-                                    <input type="submit" class="btnlogin" name="buscarLibros"/>
-                                    <br>
-                                </form>
-
-                            </div>
 
                         </div>
                     </div>
@@ -175,54 +159,74 @@
                                 </h1>
                             <?php } ?>
                         </div>
-                        <div class="col-6">
-                            <div class="resultado">
-                                <?php
-                                if (isset($aVistaREST)) {
-                                    foreach ($aVistaREST as $libro) {
-                                        ?>
-                                        <div class="libro">
-                                            <div class="imagen">
-                                                <img src="<?php echo $libro['imagen']; ?>">
+                        <div id="banner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <form action="index.php" method="post">
+                                            <legend>Busqueda de Libros <a href="https://developers.google.com/books/docs/v1/getting_started" target="_blank"><i class="bi bi-info-circle-fill"></i></a></legend>
+                                            <div style="with:50%;height: 30%;border:solid 2px #000; word-break:break-all;background: rgba(0, 0, 0, 0.486);padding: 20px 0px 0px 20px;margin-bottom: 5px">
+                                                <p style=" text-align: justify;font-size: 18px; font-weight: 50;">Servicio web que sirve para consultar un libro. No necesariamente busca por título, pero es su prioridad. 
+                                                    (p. ej. si buscas un autor primero mostrará libros en cuyo título esté su nombre). Puede buscar los carácteres 
+                                                    introducidos en cualquier campo de su base de datos de libros.</p>
+                                            </div>    
+                                            <input name="busquedaLibro" type="text" placeholder="Buscar Libro" value="<?php echo $_REQUEST['busquedaLibro'] ?? "" ?>">
+                                            <input type="submit" class="btnlogin" name="buscarLibros"/>
+                                            <br>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-6">
+                                <div class="resultado">
+                                    <?php
+                                    if (isset($aVistaREST)) {
+                                        foreach ($aVistaREST as $libro) {
+                                            ?>
+                                            <div class="libro">
+                                                <div class="imagen">
+                                                    <img src="<?php echo $libro['imagen']; ?>">
+                                                </div>
+                                                <div class="titulo">
+                                                    <h1 class="mensajeRest">
+                                                        <span class="tituloRest"><?php echo $libro['titulo'] . ", (" . $libro['anyoEdicion'] . ")"; ?></span>
+                                                    </h1>
+                                                    <p>
+                                                        <?php
+                                                        ?>
+                                                    </p>
+                                                    <h1 class="mensajeRest">
+                                                        <span class="tituloRest"><?php echo $libro['editorial']; ?></span>
+                                                    </h1>
+                                                    <h1 class="mensajeRest">
+                                                        <span class="tituloRest"><?php echo $libro['paginas']; ?> páginas</span>
+                                                        <a style="color: black" href="<?php echo $libro['link']; ?>">Ver en Google Books &#62;&#62;</a>
+                                                    </h1>
+                                                </div>
                                             </div>
-                                            <div class="titulo">
-                                                <h1 class="mensajeRest">
-                                                    <span class="tituloRest"><?php echo $libro['titulo'] . ", (" . $libro['anyoEdicion'] . ")"; ?></span>
-                                                </h1>
-                                                <p>
-                                                    <?php
-                                                    ?>
-                                                </p>
-                                                <h1 class="mensajeRest">
-                                                    <span class="tituloRest"><?php echo $libro['editorial']; ?></span>
-                                                </h1>
-                                                <h1 class="mensajeRest">
-                                                    <span class="tituloRest"><?php echo $libro['paginas']; ?> páginas</span>
-                                                    <a style="color: black" href="<?php echo $libro['link']; ?>">Ver en Google Books &#62;&#62;</a>
-                                                </h1>
-                                            </div>
-                                        </div>
-                                        <?php
+                                            <?php
+                                        }
                                     }
-                                }
-                                ?>
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
+
         </div>
-    </section>
 
-</div>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-</body>
+    </body>
 </html>
 
 
