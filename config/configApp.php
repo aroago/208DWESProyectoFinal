@@ -16,6 +16,8 @@ include 'model/Usuario.php';
 include 'model/UsuarioPDO.php';
 include 'model/AppError.php';
 require_once 'model/Libro.php';
+include 'model/Departamento.php';
+include 'model/DepartamentoPDO.php';
 
 //Definir constantes
 define("OBLIGATORIO", 1);
@@ -38,7 +40,8 @@ $aControladores = [
     'rest'=> 'controller/cREST.php',
     'miCuenta' => 'controller/cMiCuenta.php',
     'borrarCuenta' => 'controller/cBorrarCuenta.php',
-    'cambiarPassword' => 'controller/cCambiarPassword.php'
+    'cambiarPassword' => 'controller/cCambiarPassword.php',
+    'mtoDepartamentos' => 'controller/cMtoDepartamentos.php'
 ];
 
 //Array de las vistas
@@ -54,7 +57,8 @@ $aVistas = [
     'rest' => 'view/vREST.php',
     'miCuenta' => 'view/vMiCuenta.php',
     'borrarCuenta' => 'view/vBorrarCuenta.php',
-    'cambiarPassword' => 'view/vCambiarPassword.php'
+    'cambiarPassword' => 'view/vCambiarPassword.php',
+    'mtoDepartamentos' => 'view/vMtoDepartamentos.php'
 ];
 ?>
 
