@@ -1570,6 +1570,7 @@ h3{
     box-shadow: inset 0px 1px 0px 0px #3e484a;
     padding: 34px 0 34px 0;
     color: #fff;
+    background: #3B4346 url(images/bg01.jpg);
 }
 
 #banner .bordered-feature-image {
@@ -1696,6 +1697,7 @@ h3{
     text-align: center;
     padding: 40px 0px 40px 0;
     color: #ffffff;
+    background: #3B4346 url(images/bg01.jpg);
 }
 
 #copyright a {
@@ -2042,7 +2044,7 @@ h3{
 .mensajeRest{
     font-size: 16px;
     font-family: sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     color: rgb(0, 0, 0);
 
 }

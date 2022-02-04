@@ -1,9 +1,9 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author: Aroa Granero Omañas
+ * @version: v1
+ * Created on: 31/1/2022
+ * Last modification: 31/1/2022
  */
 
 /**
