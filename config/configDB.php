@@ -9,11 +9,11 @@
 
 //ENTORNO EXPLOTACION CLASE
 /* IP del servidor y Nombre de la base de datos*/
-define("HOST", "mysql:host=db5005797519.hosting-data.io;dbname=dbs4868804;");
+//define("HOST", "mysql:host=db5005797519.hosting-data.io;dbname=dbs4868804;");
 /* Usuario con el que se conecta */
-define("USER", "dbu2267576");
+//define("USER", "dbu2267576");
 /* Contraseña con la que conectarse a la base de datos */
-define("PASSWORD", "daw2_Sauces");
+//define("PASSWORD", "daw2_Sauces");
 
 //ENTORNO DESARROLLO CASA
 /* IP del servidor y Nombre de la base de datos*/
@@ -31,4 +31,14 @@ define("PASSWORD", "daw2_Sauces");
 //define("USER", "User208DWESProyectoTema5");
 /* Contraseña con la que conectarse a la base de datos */
 //define("PASSWORD", "P@ssw0rd");
+
+//ENTORNO 000webHost
+
+/* IP del servidor y Nombre de la base de datos*/
+define("HOST", "mysql:dbname=id18399839_db208dwesproyectotema5;host=localhost");
+/* Usuario con el que se conecta */
+define("USER", "id18399839_user208dwesproyectotema5");
+/* Contraseña con la que conectarse a la base de datos */
+define("PASSWORD", "daw2_SaucesA");
+
 ?>
