@@ -49,7 +49,7 @@
                         <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/github.png" width="40px" height="40px" />
 
                     </a>
-                    <a type="application/github" href="#" target="_blank">
+                    <a type="application/github" href="./webroot/rss.xml" target="_blank">
                         <img class="iconoIMG" alt="RSS" src="./webroot/css/images/RSS.png" width="40px" height="40px" />
 
                     </a>

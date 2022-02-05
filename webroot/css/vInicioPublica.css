@@ -1462,8 +1462,15 @@ input, select, textarea {
 		.bordered-feature-image img {
 			display: block;
 			width: 100%;
+                        height: 461px;
 		}
-
+                .feature-image img{
+                    display: block;
+			width: 100%;
+                }
+                .bordered-feature-image img:hover {
+			transform: scale(1.1);
+		}
 	.button-large {
 		background-image: -moz-linear-gradient(top, #c31bed, #9e00ce);
 		background-image: -webkit-linear-gradient(top, #dbdbdb, #2b606d);
