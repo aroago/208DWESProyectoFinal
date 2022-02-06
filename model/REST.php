@@ -76,5 +76,35 @@ class REST {
              } 
             
         }
+        /**
+     * Funcion que devuelve un objeto provincia con los datos devueltos por la API. 
+     * En caso de que el servidor de error devuelve null.
+     * 
+     * 
+     * @param Int $codDepartamento
+     * @return \Departamento
+     */
+    function buscarDepartamento($codDepartamento) {
+        $urlConcreta='http://192.168.1.107/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento='. $codDepartamento;
+        $oDepartamento = null;
+        $sResultadoRawData = false;
+        $aHeaders = get_headers( $urlConcreta);   //get_header devuelve un array con las respuestas a una petición HTTP.Lo guardo en la variable headers
+        $numHeaders = substr($aHeaders[0], 9, 3);      //substr devuelve una cadena, entonces quiero que recorra la posicion 0 del array aheaders
+        if ($numHeaders == "200") {
+            $sResultadoRawData = file_get_contents( $urlConcreta);
+        }
+        
+        if ($sResultadoRawData) {//si el servidor no ha dado fallo
+            $aJson = json_decode($sResultadoRawData, true); //decodificamos el json y lo devolvemos en un array
+
+            $oDepartamento = new Departamento($aJson['departamento']['codDepartamento'],
+                    $aJson['departamento']['descDepartamento'],
+                    $aJson['departamento']['fechaCreacionDepartamento'],
+                    $aJson['departamento']['volumenDeNegocio']
+            );
+        }
+
+        return $oDepartamento;//si ha dado error devuelce null.
+    }
 
 }

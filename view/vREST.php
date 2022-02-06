@@ -179,54 +179,55 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="col-6">
-                                <div class="resultado">
-                                    <?php
-                                    if (isset($aVistaREST)) {
-                                        foreach ($aVistaREST as $libro) {
-                                            ?>
-                                            <div class="libro">
-                                                <div class="imagen">
-                                                    <img src="<?php echo $libro['imagen']; ?>">
-                                                </div>
-                                                <div class="titulo">
-                                                    <h1 class="mensajeRest">
-                                                        <span class="tituloRest"><?php echo $libro['titulo'] . ", (" . $libro['anyoEdicion'] . ")"; ?></span>
-                                                    </h1>
-                                                    <p>
-                                                        <?php
-                                                        ?>
-                                                    </p>
-                                                    <h1 class="mensajeRest">
-                                                        <span class="tituloRest"><?php echo $libro['editorial']; ?></span>
-                                                    </h1>
-                                                    <h1 class="mensajeRest">
-                                                        <span class="tituloRest"><?php echo $libro['paginas']; ?> páginas</span>
-                                                        <a style="color: black" href="<?php echo $libro['link']; ?>">Ver en Google Books &#62;&#62;</a>
-                                                    </h1>
-                                                </div>
+                        <div class="col-6">
+                            <div class="resultado">
+                                <?php
+                                if (isset($aVistaREST)) {
+                                    foreach ($aVistaREST as $libro) {
+                                        ?>
+                                        <div class="libro">
+                                            <div class="imagen">
+                                                <img src="<?php echo $libro['imagen']; ?>">
                                             </div>
-                                            <?php
-                                        }
+                                            <div class="titulo">
+                                                <h1 class="mensajeRest">
+                                                    <span class="tituloRest"><?php echo $libro['titulo'] . ", (" . $libro['anyoEdicion'] . ")"; ?></span>
+                                                </h1>
+                                                <p>
+                                                    <?php
+                                                    ?>
+                                                </p>
+                                                <h1 class="mensajeRest">
+                                                    <span class="tituloRest"><?php echo $libro['editorial']; ?></span>
+                                                </h1>
+                                                <h1 class="mensajeRest">
+                                                    <span class="tituloRest"><?php echo $libro['paginas']; ?> páginas</span>
+                                                    <a style="color: black" href="<?php echo $libro['link']; ?>">Ver en Google Books &#62;&#62;</a>
+                                                </h1>
+                                            </div>
+                                        </div>
+                                        <?php
                                     }
-                                    ?>
-                                </div>
+                                }
+                                ?>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
-            </section>
-
         </div>
+    </section>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+</div>
 
-    </body>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
 
 

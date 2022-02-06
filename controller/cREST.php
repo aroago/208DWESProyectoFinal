@@ -4,16 +4,18 @@ include 'model/REST.php';
 
 $bEntradaOK = true;
 $bEntradaOKLibros = true;
+$bEntradaOKDepartamento = true;
 
 // Variable de mensaje de error.
 $aErrores = ['eBuscarInput' => null,
     'eResultado' => null,
-    'eBusquedaLibro' =>null
-    ];
-$aRespuestas=[
-        "busquedaLibro" =>""
-    ];
-    
+    'eBusquedaLibro' => null,
+    'eResultadoDep' =>null,
+];
+$aRespuestas = [
+    "busquedaLibro" => ""
+];
+
 
 
 
@@ -30,7 +32,6 @@ if (isset($_REQUEST['buscarSubmit'])) {
 
 
     if ($aErrores['eBuscarInput'] != null) {//si ha habido fallos en el array
-        
         $_REQUEST['buscarSubmit'] = "";
         $bEntradaOK = false;
     }
@@ -41,44 +42,41 @@ if (isset($_REQUEST['buscarSubmit'])) {
     $bEntradaOK = false;
 }
 if ($bEntradaOK) {//utilizacion de la web service cuando bEntrada=true
-    
-  $oResultadoProv= REST::provincia($_REQUEST['buscarInput']);
-  
-  if ($oResultadoProv == null){
-      $aErrores["eResultado"]="Provincia no encontrada";
-  }
-  
-  
+    $oResultadoProv = REST::provincia($_REQUEST['buscarInput']);
+
+    if ($oResultadoProv == null) {
+        $aErrores["eResultado"] = "Provincia no encontrada";
+    }
 }
-if(isset($_REQUEST['buscarLibros'])){
-        $aErrores['eBusquedaLibro']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaLibro'], 255, 1);
-        if($aErrores['eBusquedaLibro']!=""){
-            $bEntradaOKLibros=false;
-        }
-    }else{
+if (isset($_REQUEST['buscarLibros'])) {
+    $aErrores['eBusquedaLibro'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaLibro'], 255, 1);
+    if ($aErrores['eBusquedaLibro'] != "") {
         $bEntradaOKLibros = false;
     }
-    
-if($bEntradaOKLibros){
-     $aRespuestas['busquedaLibro']=$_REQUEST['busquedaLibro'];
-        $aRespuestas['busquedaLibro']=strtr($aRespuestas['busquedaLibro'], " ", "-");
-        
-        $aLibros=REST::buscarLibrosPorTitulo($aRespuestas['busquedaLibro']);
-        
-        $aVistaREST=[];
-        $indice=0;
-        
-        foreach($aLibros as $libro){
-            $aVistaREST[$indice]['titulo']=$libro->getTitulo();
-            $aVistaREST[$indice]['autores']=$libro->getAutor();
-            $aVistaREST[$indice]['editorial']=$libro->getEditorial();
-            $aVistaREST[$indice]['anyoEdicion']=$libro->getAnyoEdicion();
-            $aVistaREST[$indice]['paginas']=$libro->getPaginas();
-            $aVistaREST[$indice]['imagen']=$libro->getImagen();
-            $aVistaREST[$indice]['link']=$libro->getLink();
-            
-            $indice++;
-        }
+} else {
+    $bEntradaOKLibros = false;
+}
+
+if ($bEntradaOKLibros) {
+    $aRespuestas['busquedaLibro'] = $_REQUEST['busquedaLibro'];
+    $aRespuestas['busquedaLibro'] = strtr($aRespuestas['busquedaLibro'], " ", "-");
+
+    $aLibros = REST::buscarLibrosPorTitulo($aRespuestas['busquedaLibro']);
+
+    $aVistaREST = [];
+    $indice = 0;
+
+    foreach ($aLibros as $libro) {
+        $aVistaREST[$indice]['titulo'] = $libro->getTitulo();
+        $aVistaREST[$indice]['autores'] = $libro->getAutor();
+        $aVistaREST[$indice]['editorial'] = $libro->getEditorial();
+        $aVistaREST[$indice]['anyoEdicion'] = $libro->getAnyoEdicion();
+        $aVistaREST[$indice]['paginas'] = $libro->getPaginas();
+        $aVistaREST[$indice]['imagen'] = $libro->getImagen();
+        $aVistaREST[$indice]['link'] = $libro->getLink();
+
+        $indice++;
+    }
 }
 
 

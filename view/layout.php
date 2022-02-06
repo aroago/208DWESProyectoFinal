@@ -3,7 +3,7 @@
  * @author: Aroa Granero Omañas
  * @version: v1
  * Created on: 10/1/2022
- * Last modification: 10/1/2022
+ * Last modification: 06/02/2022
  * Contiene el head con el estilo básico, título y metas. También footer.
  */
 ?>
@@ -21,55 +21,55 @@
         <link rel="shortcut icon" href="favicon.ico">
         <link href="webroot/css/footer.css" rel="stylesheet" type="text/css" />
         <style>
-		 html { 
-  background: url("../img/fondogato.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+            html { 
+                background: url("../img/fondogato.jpg") no-repeat center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
 
-}
+            }
             .imgFooter{
                 width: 40px;
                 height: 40px;
             }
         </style>
-        
+
     </head>
     <body>
         <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; //Requiere la vista indicada en el controlador correspondiente. ?>
-       <!-- Copyright -->
-            <div id="copyright">
-                <p>&copy;2021 Todos los derechos reservados AroaGO----Fecha de Modificación:22/01/2022
-                    <a style="padding-left:10%;" type="application/herramientas" href="#" target="_blank">
-                        <img class="iconoIMG" alt="herramientas" src="./webroot/css/images/herramientas.png" width="40px" height="40px" />
+        <!-- Copyright -->
+        <div id="copyright">
+            <p>&copy;2021 Todos los derechos reservados AroaGO----Fecha de Modificación:22/01/2022
+                <a style="padding-left:10%;" type="application/herramientas" href="#" target="_blank">
+                    <img class="iconoIMG" alt="herramientas" src="./webroot/css/images/herramientas.png" width="40px" height="40px" />
 
-                    </a>
-                    <a type="application/github" href="https://github.com/aroago/208DWESProyectoFinal" target="_blank">
-                        <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/github.png" width="40px" height="40px" />
+                </a>
+                <a type="application/github" href="https://github.com/aroago/208DWESProyectoFinal" target="_blank">
+                    <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/github.png" width="40px" height="40px" />
 
-                    </a>
-                    <a type="application/github" href="./webroot/rss.xml" target="_blank">
-                        <img class="iconoIMG" alt="RSS" src="./webroot/css/images/RSS.png" width="40px" height="40px" />
+                </a>
+                <a type="application/github" href="./webroot/rss.xml" target="_blank">
+                    <img class="iconoIMG" alt="RSS" src="./webroot/css/images/RSS.png" width="40px" height="40px" />
 
-                    </a>
-                    <a type="application/www" href="https://daw208.ieslossauces.es/" target="_blank">
-                        <img class="iconoIMG" alt="www" src="./webroot/css/images/www.png" width="40px" height="40px" />
+                </a>
+                <a type="application/www" href="https://daw208.ieslossauces.es/" target="_blank">
+                    <img class="iconoIMG" alt="www" src="./webroot/css/images/www.png" width="40px" height="40px" />
 
-                    </a>
-                    <a type="application/doc" href="./doc/index.html" target="_blank">
-                        <img class="iconoIMG" alt="doc" src="./webroot/css/images/doc.png" width="40px" height="40px" />
+                </a>
+                <a type="application/doc" href="./doc/index.html" target="_blank">
+                    <img class="iconoIMG" alt="doc" src="./webroot/css/images/doc.png" width="40px" height="40px" />
 
-                    </a>
-                    <a type="application/cv" href="#" target="_blank">
-                        <img class="iconoIMG" alt="cv" src="./webroot/css/images/cv.png" width="40px" height="40px" />
+                </a>
+                <a type="application/cv" href="./webroot/pdf/CV-AroaGO-Basic.pdf" target="_blank">
+                    <img class="iconoIMG" alt="cv" src="./webroot/css/images/cv.png" width="40px" height="40px" />
 
-                    </a>
-                    <a type="application/github" href="https://daw208.ieslossauces.es/" target="_blank">
-                        <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/wwwcopia.png" width="40px" height="40px" />
+                </a>
+                <a type="application/github" href="https://daw208.ieslossauces.es/" target="_blank">
+                    <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/wwwcopia.png" width="40px" height="40px" />
 
-                    </a>
-                </p>
-            </div>
+                </a>
+            </p>
+        </div>
 </html>
 
