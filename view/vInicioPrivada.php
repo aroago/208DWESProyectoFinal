@@ -24,7 +24,7 @@
                                 <!-- Logo -->
                                 <h1><a href="index.php" id="logo">AGO Proyecto Final 2021-2022 <br> Inicio Privada</a></h1>
                                 <nav id="nav">
-                                    <img id="imagenUsuario" src="<?php print($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getImagenUsuario()) ?>">
+                                    <img id="imagenUsuario" src="<?php print($_SESSION['usuarioDAW208ProyectoFinal']->getImagenUsuario()) ?>">
                                     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="formularioInicioPrivada">
                                         <input type='submit' class="btnlogin" name='miCuenta' value='Mi Cuenta'/>
                                     </form>
@@ -58,16 +58,15 @@
                     <div class="container">
                         <div class="row">
 
-
-                            <?php if ($_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getNumConexiones() <= 1) { ?>
-                                <h1 class="mensajePrivada"><?php echo "Bienvenid@ " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getDescUsuario() ?></h1>
+                            <?php if ($_SESSION["usuarioDAW208ProyectoFinal"]->getNumConexiones() <= 1) { ?>
+                                <h1 class="mensajePrivada"><?php echo "Bienvenid@ " . $_SESSION["usuarioDAW208ProyectoFinal"]->getDescUsuario() ?></h1>
                                 <h1 class="mensajePrivada"><?php echo "Esta es la primera vez que te conectas!" ?></h1>
                                 <?php
                             } else {
                                 ?>
-                                <h1 class="mensajePrivada"><?php echo "Bienvenid@ " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getDescUsuario() ?></h1>
-                                <h1 class="mensajePrivada"><?php echo "Es la " . $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getNumConexiones() . "ª vez que te conectas." ?></h1>
-                                <h1 class="mensajePrivada"><?php echo "Tu ultima conexion fue el " . date("d/m/Y h:i:s", $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"]->getFechaHoraUltimaConexion()) ?></h1>
+                                <h1 class="mensajePrivada"><?php echo "Bienvenid@ " . $_SESSION["usuarioDAW208ProyectoFinal"]->getDescUsuario() ?></h1>
+                                <h1 class="mensajePrivada"><?php echo "Es la " . $_SESSION["usuarioDAW208ProyectoFinal"]->getNumConexiones() . "ª vez que te conectas." ?></h1>
+                                <h1 class="mensajePrivada"><?php echo "Tu ultima conexion fue el " . date("d/m/Y h:i:s", $_SESSION["usuarioDAW208ProyectoFinal"]->getFechaHoraUltimaConexion()) ?></h1>
                                 <?php
                             }
                             ?> 

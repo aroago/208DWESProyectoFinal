@@ -16,7 +16,7 @@ if(isset($_REQUEST['login'])){
             $oUsuario = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["password"]);
             if($oUsuario){
                 UsuarioPDO::registrarUltimaConexion($oUsuario->getCodUsuario());
-                $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'] = $oUsuario;
+                $_SESSION['usuarioDAW208ProyectoFinal'] = $oUsuario;
                 
                 $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
                 $_SESSION['paginaEnCurso'] = 'inicio';

@@ -36,7 +36,7 @@ if(isset($_REQUEST['cambiar'])){
      * Comprobación que la antigua contraseña coincida con la de la base de datos.
      * Si no lo hace, opne la entrada a false y guarda el error.
      */
-    if(!UsuarioPDO::validarUsuario($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getCodUsuario(), $_REQUEST['passwordActual'])){
+    if(!UsuarioPDO::validarUsuario($_SESSION['usuarioDAW208ProyectoFinal']->getCodUsuario(), $_REQUEST['passwordActual'])){
         $aErrores['passwordActual'] = 'Contraseña incorrecta.';
         $bEntradaOK = false;
     }
@@ -72,7 +72,7 @@ else{
 // Si la entrada es correcta, efectúa cambios.
 if($bEntradaOK){
     // Actualización en la base de datos.
-    $_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"] = UsuarioPDO::cambiarPassword($_SESSION["usuarioDAW208LoginLogoutMulticapaPOO"], $_REQUEST['passwordNueva']);
+    $_SESSION["usuarioDAW208ProyectoFinal"] = UsuarioPDO::cambiarPassword($_SESSION["usuarioDAW208ProyectoFinal"], $_REQUEST['passwordNueva']);
           
     // Regreso al índice público.
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];

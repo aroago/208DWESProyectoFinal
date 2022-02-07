@@ -32,12 +32,12 @@ $aErrores = ['DescUsuario' => null, //Creo un array de errores y lo inicializo a
     'imagen' => null];
 
 $aVMiCuenta = [
-    'CodUsuario' => $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getCodUsuario(),
-    'DescUsuario' => $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getDescUsuario(),
-    'numConexiones' => $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getNumConexiones(),
-    'fechaHoraUltimaConexion' => date('d/m/Y H:i:s e', $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getFechaHoraUltimaConexion()),
-    'password' => $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getPassword(),
-    'imagen'=> $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getImagenUsuario()
+    'CodUsuario' => $_SESSION['usuarioDAW208ProyectoFinal']->getCodUsuario(),
+    'DescUsuario' => $_SESSION['usuarioDAW208ProyectoFinal']->getDescUsuario(),
+    'numConexiones' => $_SESSION['usuarioDAW208ProyectoFinal']->getNumConexiones(),
+    'fechaHoraUltimaConexion' => date('d/m/Y H:i:s e', $_SESSION['usuarioDAW208ProyectoFinal']->getFechaHoraUltimaConexion()),
+    'password' => $_SESSION['usuarioDAW208ProyectoFinal']->getPassword(),
+    'imagen'=> $_SESSION['usuarioDAW208ProyectoFinal']->getImagenUsuario()
 ];
 
 
@@ -79,7 +79,7 @@ if (isset($_REQUEST['btnMiCuenta'])) {
 if ($bEntradaOK) {
 
     if ($bImagenIntroducida) {
-        $path = RUTA_IMG . $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getCodUsuario();
+        $path = RUTA_IMG . $_SESSION['usuarioDAW208ProyectoFinal']->getCodUsuario();
         $rutaArchivo = $path . "/" . $archivo;
 
         if (!file_exists($path)) {
@@ -99,10 +99,10 @@ if ($bEntradaOK) {
     //Se intenta subir al servidor
 
 
-    $oUsuario = UsuarioPDO::modificarUsuario($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'], $aVMiCuenta['DescUsuario'], $rutaArchivo);
+    $oUsuario = UsuarioPDO::modificarUsuario($_SESSION['usuarioDAW208ProyectoFinal'], $aVMiCuenta['DescUsuario'], $rutaArchivo);
 
 
-    $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'] = $oUsuario;
+    $_SESSION['usuarioDAW208ProyectoFinal'] = $oUsuario;
 
 
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
