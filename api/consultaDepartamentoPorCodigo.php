@@ -42,7 +42,7 @@
         $bRespuestaOK=false;
         $aRespuesta=[
                 "respuestaOK"=>$bRespuestaOK,
-                "error"=>"Ha habido un problema con la API"
+                "error"=>"Ha habido un problema con el API REST"
             ];
     }
     echo json_encode($aRespuesta);

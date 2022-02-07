@@ -140,6 +140,7 @@ public static function mostrarUsuarios() {
     }
 
     public static function registrarUltimaConexion($codigoUsuario) {
+        
         $sUpdate = <<<QUERY
             UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,
             T01_FechaHoraUltimaConexion = unix_timestamp()

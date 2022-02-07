@@ -85,14 +85,11 @@ class REST {
      * @return \Departamento
      */
     function buscarDepartamento($codDepartamento) {
-        $urlConcreta='http://192.168.1.107/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento='. $codDepartamento;
         $oDepartamento = null;
         $sResultadoRawData = false;
-        $aHeaders = get_headers( $urlConcreta);   //get_header devuelve un array con las respuestas a una petición HTTP.Lo guardo en la variable headers
-        $numHeaders = substr($aHeaders[0], 9, 3);      //substr devuelve una cadena, entonces quiero que recorra la posicion 0 del array aheaders
-        if ($numHeaders == "200") {
-            $sResultadoRawData = file_get_contents( $urlConcreta);
-        }
+       
+         $sResultadoRawData = file_get_contents("http://192.168.1.107/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
+        
         
         if ($sResultadoRawData) {//si el servidor no ha dado fallo
             $aJson = json_decode($sResultadoRawData, true); //decodificamos el json y lo devolvemos en un array

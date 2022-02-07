@@ -130,31 +130,31 @@
                                 ?>
                                     <br>
                                     <span class="tituloRest"> Provincia:</span> <?php
-                                    echo $oResultadoProv->getProvincia(); //Devuelve el campo que ha escrito previamente el usuario.
+                                     echo $nombreProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                 </h1>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest">ID Provincia:</span> <?php
-                                    echo $oResultadoProv->getIdProvincia(); //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo  $idProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                 </h1>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest"> Descripcion:</span><?php
-                                    echo $oResultadoProv->getDescripcion() //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo $descripcionProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                 </h1>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest"> Tiempo:</span><?php
-                                    echo $oResultadoProv->getTiempo(); //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo $tiempoProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
 
                                 </h1>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest"> MAX:</span><?php
-                                    echo $oResultadoProv->getTemperaturaMax(); //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo $temmaximaProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                     <span class="tituloRest"> MIN:</span><?php
-                                    echo $oResultadoProv->getTemperaturaMin(); //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo $temminimaProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                 </h1>
                             <?php } ?>

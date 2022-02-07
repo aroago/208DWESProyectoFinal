@@ -46,7 +46,18 @@ if ($bEntradaOK) {//utilizacion de la web service cuando bEntrada=true
 
     if ($oResultadoProv == null) {
         $aErrores["eResultado"] = "Provincia no encontrada";
+    }else{
+       $nombreProvincia = $oResultadoProv->getProvincia(); 
+        $idProvincia = $oResultadoProv->getIdProvincia();
+        $descripcionProvincia = $oResultadoProv->getDescripcion();
+        $tiempoProvincia = $oResultadoProv->getTiempo(); 
+        $temmaximaProvincia = $oResultadoProv->getTemperaturaMax(); 
+        $temminimaProvincia = $oResultadoProv->getTemperaturaMin(); 
     }
+    
+    
+    
+    
 }
 if (isset($_REQUEST['buscarLibros'])) {
     $aErrores['eBusquedaLibro'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaLibro'], 255, 1);
