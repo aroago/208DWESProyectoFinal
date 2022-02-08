@@ -130,12 +130,12 @@
                                 ?>
                                     <br>
                                     <span class="tituloRest"> Provincia:</span> <?php
-                                     echo $nombreProvincia; //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo $nombreProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                 </h1>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest">ID Provincia:</span> <?php
-                                    echo  $idProvincia; //Devuelve el campo que ha escrito previamente el usuario.
+                                    echo $idProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                 </h1>
                                 <h1 class="mensajeRest">
@@ -157,6 +157,59 @@
                                     echo $temminimaProvincia; //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
                                 </h1>
+                            <?php } ?>
+                        </div>
+                        <div id="banner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <form action="index.php" method="post">
+                                            <legend>Busqueda de Departamentos <a href="#" target="_blank"><i class="bi bi-info-circle-fill"></i></a></legend>
+                                            <div style="with:50%;height: 30%;border:solid 2px #000; word-break:break-all;background: rgba(0, 0, 0, 0.486);padding: 20px 0px 0px 20px;margin-bottom: 5px">
+                                                <p style=" text-align: justify;font-size: 18px; font-weight: 50;">Servicio web que sirve para consultar los datos de un Departamento 
+                                                    de esta base de datos a través de su codigo.</p>
+                                            </div>    
+                                            <select required name="buscarInputPropio" class="form-control">
+                                                <option value="">Elige Un Departamento</option>
+                                                <option value="INF">Informatica</option>
+                                                <option value="LEN">Lengua</option>
+                                                <option value="MUS">Musica</option>
+                                                <option value="BIO">Biologia</option>
+                                                <option value="ING">Ingles</option>
+                                            </select>
+                                            <input type="submit" class="btnlogin" name="buscarPropio"/>
+                                            <br>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!--resultado-->
+                            <?php if ($aErrores["eBuscarPropio"] == null && isset($_REQUEST["buscarInputPropio"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar. ?>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest"> CodDepartamento:</span> <?php
+                                    echo $codDepartamento; //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+                                </h1>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest">Descripcion Departamento:</span> <?php
+                                    echo $descDepartamento; //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+                                </h1>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest"> Volumen Departamento:</span><?php
+                                    echo $volumenDeNegocio; //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+                                </h1>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest"> Fecha Creacion Departamento:</span><?php
+                                    echo $fechaCreacionDepartamento; //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+
+                                </h1>
+
                             <?php } ?>
                         </div>
                         <div id="banner">

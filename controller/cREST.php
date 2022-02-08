@@ -4,13 +4,13 @@ include 'model/REST.php';
 
 $bEntradaOK = true;
 $bEntradaOKLibros = true;
-$bEntradaOKDepartamento = true;
+$bEntradaOKPropio = true;
 
 // Variable de mensaje de error.
 $aErrores = ['eBuscarInput' => null,
     'eResultado' => null,
     'eBusquedaLibro' => null,
-    'eResultadoDep' =>null,
+    'eBuscarPropio' => null
 ];
 $aRespuestas = [
     "busquedaLibro" => ""
@@ -46,21 +46,46 @@ if ($bEntradaOK) {//utilizacion de la web service cuando bEntrada=true
 
     if ($oResultadoProv == null) {
         $aErrores["eResultado"] = "Provincia no encontrada";
-    }else{
-       $nombreProvincia = $oResultadoProv->getProvincia(); 
+    } else {
+        $nombreProvincia = $oResultadoProv->getProvincia();
         $idProvincia = $oResultadoProv->getIdProvincia();
         $descripcionProvincia = $oResultadoProv->getDescripcion();
-        $tiempoProvincia = $oResultadoProv->getTiempo(); 
-        $temmaximaProvincia = $oResultadoProv->getTemperaturaMax(); 
-        $temminimaProvincia = $oResultadoProv->getTemperaturaMin(); 
+        $tiempoProvincia = $oResultadoProv->getTiempo();
+        $temmaximaProvincia = $oResultadoProv->getTemperaturaMax();
+        $temminimaProvincia = $oResultadoProv->getTemperaturaMin();
     }
-    
-    
-    
-    
 }
+
+if (isset($_REQUEST['buscarPropio'])) {
+    $aErrores['eBuscarInput'] = validacionFormularios::comprobarAlfabetico($_REQUEST['buscarInputPropio'], 3, 1, OBLIGATORIO);
+
+
+    if ($aErrores['eBuscarInput'] != null) {//si ha habido fallos en el array
+        $_REQUEST['buscarPropio'] = "";
+        $bEntradaOKPropio = false;
+    }
+}
+/*
+ * Si no se ha enviado el formulario, pone el manejador a false.
+ */ else {
+    $bEntradaOKPropio = false;
+}
+if ($bEntradaOKPropio) {//utilizacion de la web service cuando bEntrada=true
+    $oResultadoDep = REST::buscarDepartamento($_REQUEST['buscarInputPropio']);
+
+    if ($oResultadoDep == null) {
+        $aErrores["eBuscarPropio"] = "Provincia no encontrada";
+    } else {
+        $codDepartamento = $oResultadoDep->getCodDepartamento();
+        $descDepartamento = $oResultadoDep->getDescDepartamento();
+        $volumenDeNegocio = $oResultadoDep->getVolumenDeNegocio();
+        $fechaCreacionDepartamento = $oResultadoDep->getFechaCreacionDepartamento();
+    }
+}
+
+
 if (isset($_REQUEST['buscarLibros'])) {
-    $aErrores['eBusquedaLibro'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaLibro'], 255, 1);
+    $aErrores['eBuscarPropio'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaLibro'], 255, 1);
     if ($aErrores['eBusquedaLibro'] != "") {
         $bEntradaOKLibros = false;
     }

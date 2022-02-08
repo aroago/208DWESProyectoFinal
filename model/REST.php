@@ -19,7 +19,7 @@ class REST {
      * @param Int $codProvincia
      * @return \Provincia
      */
-    function provincia($codProvincia) {
+    public static function provincia($codProvincia) {
         $urlConcreta='https://www.el-tiempo.net/api/json/v2/provincias/'. $codProvincia;
         $oProvincia = null;
         $sResultadoRawData = false;
@@ -84,11 +84,11 @@ class REST {
      * @param Int $codDepartamento
      * @return \Departamento
      */
-    function buscarDepartamento($codDepartamento) {
+    public static function buscarDepartamento($codDepartamento) {
         $oDepartamento = null;
         $sResultadoRawData = false;
        
-         $sResultadoRawData = file_get_contents("http://192.168.1.107/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
+         $sResultadoRawData = file_get_contents("http://daw208.sauces.local/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
         
         
         if ($sResultadoRawData) {//si el servidor no ha dado fallo

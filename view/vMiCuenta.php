@@ -54,7 +54,7 @@
                                     <br>
 
                                     <h3>Descripción de usuario: </h3>
-                                    <input  type="text" name="DescUsuario" value="<?php
+                                    <input  type="text" name="DescUsuario" style="width: 400px;" value="<?php
                                     echo $aVMiCuenta['DescUsuario'];
                                     ?>">
                                     <span style="color:red">
@@ -68,7 +68,7 @@
                                     <br>
 
                                     <h3>Fecha y Hora Ultima Conexion: </h3>
-                                    <input  type="fechaHoraUltimaConexion" name="fechaHoraUltimaConexion" value="<?php echo $aVMiCuenta['fechaHoraUltimaConexion'] ?>" disabled/>
+                                    <input  type="fechaHoraUltimaConexion" style="width: 400px;" name="fechaHoraUltimaConexion" value="<?php echo $aVMiCuenta['fechaHoraUltimaConexion'] ?>" disabled/>
 
                                     <br>
 
@@ -81,12 +81,14 @@
                                     <input name="archivo" id="archivo" type="file"/>
                                     <br>
 
-                                    <input type="submit" name="btnMiCuenta" class="btnlogin" value="ACEPTAR">
-                                    <input style="background: rgba(255, 3, 3, 0.3);" type="submit" name="borrarCuenta" class="btnlogin" value="Eliminar Cuenta">
+                                    <input type="submit" name="btnMiCuenta" style="width: 153px; "class="btnlogin" value="ACEPTAR">
+                                    <input style="background: rgba(255, 3, 3, 0.3);" type="submit"  style="width: 153px;" name="borrarCuenta" class="btnlogin" value="Eliminar Cuenta">
                                 </form>
-                                <!-- La imagen que vamos a usar para previsualizar lo que el usuario selecciona -->
-                                <img id="imagenPrevisualizacion" src="<?php echo $aVMiCuenta["imagen"];?>">
-                                <script src="./webroot/js/imagenUsuariojs.js"></script>
+                                <div class="col-6">
+                                    <!-- La imagen que vamos a usar para previsualizar lo que el usuario selecciona -->
+                                    <img id="imagenPrevisualizacion" src="<?php echo $aVMiCuenta["imagen"]; ?>">
+                                    <script src="./webroot/js/imagenUsuariojs.js"></script>
+                                </div>
                             </div>
                         </div>
                     </div>

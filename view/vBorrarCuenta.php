@@ -42,10 +42,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-3 col-6-medium col-12-small">
-                                <h1>DESEAS BORRAR CUENTA?</h1>
+                                <h1 style="color:black; font-weight: 500;font-size: 30px;">DESEAS BORRAR LA CUENTA?</h1>
                                 <form method="Post" style="width: 110%;">
-                                    <input type="submit" name="no" class="btnlogin" value="no">
-                                    <input type="submit" name="si" class="btnlogin" value="si">
+                                    <input type="submit" name="si" style="width: 200px;" class="btnlogin" value="SI">
+                                    <input type="submit" name="no" style="width: 200px;" class="btnlogin" value="NO">
                                 </form>
                             </div>
                         </div>
