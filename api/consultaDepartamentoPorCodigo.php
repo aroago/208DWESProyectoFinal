@@ -32,8 +32,7 @@
         else{
             $bRespuestaOK=false;
             $aRespuesta=[
-                "respuestaOK"=>$bRespuestaOK,
-                "error"=>"Departamento no encontrado"
+                "error"=>"Departamento no encontrado con ese codigo"
             ];
         }
         
@@ -41,7 +40,6 @@
     else{
         $bRespuestaOK=false;
         $aRespuesta=[
-                "respuestaOK"=>$bRespuestaOK,
                 "error"=>"Ha habido un problema con el API REST"
             ];
     }

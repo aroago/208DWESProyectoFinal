@@ -57,10 +57,10 @@ if ($bEntradaOK) {//utilizacion de la web service cuando bEntrada=true
 }
 
 if (isset($_REQUEST['buscarPropio'])) {
-    $aErrores['eBuscarInput'] = validacionFormularios::comprobarAlfabetico($_REQUEST['buscarInputPropio'], 3, 1, OBLIGATORIO);
+    $aErrores['eBuscarPropio'] = validacionFormularios::comprobarAlfabetico($_REQUEST['buscarInputPropio'], 3, 1, OBLIGATORIO);
 
 
-    if ($aErrores['eBuscarInput'] != null) {//si ha habido fallos en el array
+    if ($aErrores['eBuscarPropio'] != null) {//si ha habido fallos en el array
         $_REQUEST['buscarPropio'] = "";
         $bEntradaOKPropio = false;
     }
@@ -73,13 +73,13 @@ if (isset($_REQUEST['buscarPropio'])) {
 if ($bEntradaOKPropio) {//utilizacion de la web service cuando bEntrada=true
     $oResultadoDep = REST::buscarDepartamento($_REQUEST['buscarInputPropio']);
 
-    if ($oResultadoDep == null) {
-        $aErrores["eBuscarPropio"] = "Provincia no encontrada";
-    } else {
+    if (is_object($oResultadoDep)) {
         $codDepartamento = $oResultadoDep->getCodDepartamento();
         $descDepartamento = $oResultadoDep->getDescDepartamento();
         $volumenDeNegocio = $oResultadoDep->getVolumenDeNegocio();
         $fechaCreacionDepartamento = $oResultadoDep->getFechaCreacionDepartamento();
+    } else {
+        $aErrores["eBuscarPropio"] = "Departamento no encontrado";
     }
 }
 

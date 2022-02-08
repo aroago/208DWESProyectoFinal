@@ -107,9 +107,6 @@
                                         if ($aErrores["eBuscarInput"] != null) { //Compruebo que el array de errores no está vacío.
                                             echo $aErrores["eBuscarInput"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
                                         }
-                                        if ($aErrores["eResultado"] != null) { //Compruebo que el array de errores no está vacío.
-                                            echo $aErrores["eResultado"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
-                                        }
                                         ?>
                                     </span>
                                 </form>
@@ -168,17 +165,17 @@
                                             <div style="with:50%;height: 30%;border:solid 2px #000; word-break:break-all;background: rgba(0, 0, 0, 0.486);padding: 20px 0px 0px 20px;margin-bottom: 5px">
                                                 <p style=" text-align: justify;font-size: 18px; font-weight: 50;">Servicio web que sirve para consultar los datos de un Departamento 
                                                     de esta base de datos a través de su codigo.</p>
-                                            </div>    
-                                            <select required name="buscarInputPropio" class="form-control">
-                                                <option value="">Elige Un Departamento</option>
-                                                <option value="INF">Informatica</option>
-                                                <option value="LEN">Lengua</option>
-                                                <option value="MUS">Musica</option>
-                                                <option value="BIO">Biologia</option>
-                                                <option value="ING">Ingles</option>
-                                            </select>
+                                            </div> 
+                                            <input name="buscarInputPropio" type="text" placeholder="Buscar Departamento" value="<?php echo $_REQUEST['buscarInputPropio'] ?? "" ?>">
                                             <input type="submit" class="btnlogin" name="buscarPropio"/>
                                             <br>
+                                            <span style="color:red">
+                                                <?php
+                                                if ($aErrores["eBuscarPropio"] != null) { //Compruebo que el array de errores no está vacío.
+                                                    echo $aErrores["eBuscarPropio"]; //Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
+                                                }
+                                                ?>
+                                            </span>
                                         </form>
 
                                     </div>
@@ -187,7 +184,7 @@
                         </div>
                         <div class="col-6">
                             <!--resultado-->
-                            <?php if ($aErrores["eBuscarPropio"] == null && isset($_REQUEST["buscarInputPropio"])) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar. ?>
+                            <?php if ($aErrores["eBuscarPropio"] == null && isset($_REQUEST["buscarInputPropio"]) && $oResultadoDep != null) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar. ?>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest"> CodDepartamento:</span> <?php
                                     echo $codDepartamento; //Devuelve el campo que ha escrito previamente el usuario.

@@ -99,9 +99,14 @@ class REST {
                     $aJson['departamento']['fechaCreacionDepartamento'],
                     $aJson['departamento']['volumenDeNegocio']
             );
+            
+             return $oDepartamento;//si ha dado error devuelce null.
+        }else{
+            
+             return $sResultadoRawData['error'];
         }
 
-        return $oDepartamento;//si ha dado error devuelce null.
+       
     }
 
 }
