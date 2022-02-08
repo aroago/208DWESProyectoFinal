@@ -8,6 +8,7 @@
  * Last modification: 03/02/2022
  */
 //http://daw208.sauces.local/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=INF
+//https://daw208.ieslossauces.es/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=INF
     require_once '../config/configDB.php';   
     require_once '../model/DB.php';
     require_once '../model/DBPDO.php';

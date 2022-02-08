@@ -88,7 +88,7 @@ class REST {
         $oDepartamento = null;
         $sResultadoRawData = false;
        
-         $sResultadoRawData = file_get_contents("http://daw208.sauces.local/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
+         $sResultadoRawData = file_get_contents("https://daw208.ieslossauces.es/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
         
         
         if ($sResultadoRawData) {//si el servidor no ha dado fallo
