@@ -7,11 +7,11 @@ if (isset($_REQUEST['no'])) {
 }
 if (isset($_REQUEST['si'])) {
     
-    UsuarioPDO::borrarUsuario($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']);
-    $path = RUTA_IMG . $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getCodUsuario(); 
+    UsuarioPDO::borrarUsuario($_SESSION['usuarioDAW208ProyectoFinal']);
+    $path = RUTA_IMG . $_SESSION['usuarioDAW208ProyectoFinal']->getCodUsuario(); 
     libreriaFunciones::borrarDirectorio($path);
     
-    unset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']);
+    unset($_SESSION['usuarioDAW208ProyectoFinal']);
     $_SESSION['paginaEnCurso'] = 'inicioPublica';
     header('location: ./index.php');
     exit;

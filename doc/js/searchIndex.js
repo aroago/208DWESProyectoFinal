@@ -96,9 +96,14 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#constant_MIN_TAMANIO"
         },                {
+            "fqsen": "\\RUTA_IMG",
+            "name": "RUTA_IMG",
+            "summary": "",
+            "url": "namespaces/default.html#constant_RUTA_IMG"
+        },                {
             "fqsen": "\\HOST",
             "name": "HOST",
-            "summary": "Fichero\u0020de\u0020configuracion\u0020que\u0020contiene\u0020la\u0020conexion\u0020a\u0020la\u0020base\u0020de\u0020datos\u0020PDO",
+            "summary": "",
             "url": "namespaces/default.html#constant_HOST"
         },                {
             "fqsen": "\\USER",
@@ -113,17 +118,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DB",
             "name": "DB",
-            "summary": "Interfaz\u0020para\u0020conexi\u00F3n\u0020con\u0020la\u0020base\u0020de\u0020datos\u0020y\u0020ejecuci\u00F3n\u0020de\u0020consultas\u0020sobre\u0020la\u0020misma.",
+            "summary": "",
             "url": "classes/DB.html"
         },                {
             "fqsen": "\\DB\u003A\u003AejecutarConsulta\u0028\u0029",
             "name": "ejecutarConsulta",
-            "summary": "Metodo\u0020ejecutarConsulta\u0028\u0029",
+            "summary": "",
             "url": "classes/DB.html#method_ejecutarConsulta"
         },                {
             "fqsen": "\\DBPDO",
             "name": "DBPDO",
-            "summary": "Clase\u0020para\u0020conexi\u00F3n\u0020con\u0020la\u0020base\u0020de\u0020datos\u0020y\u0020ejecuci\u00F3n\u0020de\u0020consultas\u0020mediante\u0020PDO.",
+            "summary": "",
             "url": "classes/DBPDO.html"
         },                {
             "fqsen": "\\DBPDO\u003A\u003AejecutarConsulta\u0028\u0029",
@@ -133,7 +138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
-            "summary": "Clase\u0020Usuario",
+            "summary": "",
             "url": "classes/Usuario.html"
         },                {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",
@@ -171,6 +176,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Usuario.html#method_getPerfil"
         },                {
+            "fqsen": "\\Usuario\u003A\u003AgetImagenUsuario\u0028\u0029",
+            "name": "getImagenUsuario",
+            "summary": "",
+            "url": "classes/Usuario.html#method_getImagenUsuario"
+        },                {
             "fqsen": "\\Usuario\u003A\u003AsetCodUsuario\u0028\u0029",
             "name": "setCodUsuario",
             "summary": "",
@@ -200,6 +210,11 @@ Search.appendIndex(
             "name": "setPerfil",
             "summary": "",
             "url": "classes/Usuario.html#method_setPerfil"
+        },                {
+            "fqsen": "\\Usuario\u003A\u003AsetImagenUsuario\u0028\u0029",
+            "name": "setImagenUsuario",
+            "summary": "",
+            "url": "classes/Usuario.html#method_setImagenUsuario"
         },                {
             "fqsen": "\\Usuario\u003A\u003A\u0024codUsuario",
             "name": "codUsuario",
@@ -231,19 +246,24 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Usuario.html#property_perfil"
         },                {
+            "fqsen": "\\Usuario\u003A\u003A\u0024imagenUsuario",
+            "name": "imagenUsuario",
+            "summary": "",
+            "url": "classes/Usuario.html#property_imagenUsuario"
+        },                {
             "fqsen": "\\UsuarioDB",
             "name": "UsuarioDB",
-            "summary": "Interfaz\u0020UsuarioDB",
+            "summary": "",
             "url": "classes/UsuarioDB.html"
         },                {
             "fqsen": "\\UsuarioDB\u003A\u003AvalidarUsuario\u0028\u0029",
             "name": "validarUsuario",
-            "summary": "Comprobaci\u00F3n\u0020de\u0020la\u0020existencia\u0020previa\u0020de\u0020un\u0020usuario\u0020y\u0020de\u0020si\u0020su\u0020contrase\u00F1a\nes\u0020correcta\u0020en\u0020la\u0020base\u0020de\u0020datos.",
+            "summary": "",
             "url": "classes/UsuarioDB.html#method_validarUsuario"
         },                {
             "fqsen": "\\UsuarioPDO",
             "name": "UsuarioPDO",
-            "summary": "Clase\u0020UsuarioPDO",
+            "summary": "",
             "url": "classes/UsuarioPDO.html"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AvalidarUsuario\u0028\u0029",
@@ -261,14 +281,34 @@ Search.appendIndex(
             "summary": "Insercion\u0020y\u0020registro\u0020de\u0020un\u0020usuario\u0020en\u0020la\u0020base\u0020de\u0020datos",
             "url": "classes/UsuarioPDO.html#method_altaUsuario"
         },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AmodificarUsuario\u0028\u0029",
+            "name": "modificarUsuario",
+            "summary": "",
+            "url": "classes/UsuarioPDO.html#method_modificarUsuario"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AcambiarPassword\u0028\u0029",
+            "name": "cambiarPassword",
+            "summary": "Cambio\u0020de\u0020contrase\u00F1a.",
+            "url": "classes/UsuarioPDO.html#method_cambiarPassword"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AmostrarUsuarios\u0028\u0029",
+            "name": "mostrarUsuarios",
+            "summary": "",
+            "url": "classes/UsuarioPDO.html#method_mostrarUsuarios"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AborrarUsuario\u0028\u0029",
+            "name": "borrarUsuario",
+            "summary": "Eliminaci\u00F3n\u0020de\u0020usuario.",
+            "url": "classes/UsuarioPDO.html#method_borrarUsuario"
+        },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AregistrarUltimaConexion\u0028\u0029",
             "name": "registrarUltimaConexion",
-            "summary": "Registro\u0020de\u0020una\u0020nueva\u0020conexi\u00F3n.",
+            "summary": "",
             "url": "classes/UsuarioPDO.html#method_registrarUltimaConexion"
         },                {
             "fqsen": "\\AppError",
             "name": "AppError",
-            "summary": "Clase\u0020Error",
+            "summary": "",
             "url": "classes/AppError.html"
         },                {
             "fqsen": "\\AppError\u003A\u003A__construct\u0028\u0029",
@@ -325,6 +365,311 @@ Search.appendIndex(
             "name": "paginaSiguiente",
             "summary": "",
             "url": "classes/AppError.html#property_paginaSiguiente"
+        },                {
+            "fqsen": "\\libreriaFunciones",
+            "name": "libreriaFunciones",
+            "summary": "Description\u0020of\u0020libreriaFunciones",
+            "url": "classes/libreriaFunciones.html"
+        },                {
+            "fqsen": "\\libreriaFunciones\u003A\u003AborrarDirectorio\u0028\u0029",
+            "name": "borrarDirectorio",
+            "summary": "",
+            "url": "classes/libreriaFunciones.html#method_borrarDirectorio"
+        },                {
+            "fqsen": "\\Departamento",
+            "name": "Departamento",
+            "summary": "Clase\u0020que\u0020crea\u0020y\u0020utiliza\u0020departamentos\u0020en\u0020la\u0020aplicaci\u00F3n.",
+            "url": "classes/Departamento.html"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Departamento.html#method___construct"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetCodDepartamento\u0028\u0029",
+            "name": "getCodDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getCodDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetDescDepartamento\u0028\u0029",
+            "name": "getDescDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getDescDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetFechaCreacionDepartamento\u0028\u0029",
+            "name": "getFechaCreacionDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getFechaCreacionDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetVolumenDeNegocio\u0028\u0029",
+            "name": "getVolumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getVolumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AgetFechaBajaDepartamento\u0028\u0029",
+            "name": "getFechaBajaDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_getFechaBajaDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetCodDepartamento\u0028\u0029",
+            "name": "setCodDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setCodDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetDescDepartamento\u0028\u0029",
+            "name": "setDescDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setDescDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetFechaCreacionDepartamento\u0028\u0029",
+            "name": "setFechaCreacionDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setFechaCreacionDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetVolumenDeNegocio\u0028\u0029",
+            "name": "setVolumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setVolumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003AsetFechaBajaDepartamento\u0028\u0029",
+            "name": "setFechaBajaDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#method_setFechaBajaDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024codDepartamento",
+            "name": "codDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_codDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024descDepartamento",
+            "name": "descDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_descDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024fechaCreacionDepartamento",
+            "name": "fechaCreacionDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_fechaCreacionDepartamento"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024volumenDeNegocio",
+            "name": "volumenDeNegocio",
+            "summary": "",
+            "url": "classes/Departamento.html#property_volumenDeNegocio"
+        },                {
+            "fqsen": "\\Departamento\u003A\u003A\u0024fechaBajaDepartamento",
+            "name": "fechaBajaDepartamento",
+            "summary": "",
+            "url": "classes/Departamento.html#property_fechaBajaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO",
+            "name": "DepartamentoPDO",
+            "summary": "Conexi\u00F3n\u0020de\u0020departamentos\u0020con\u0020la\u0020base\u0020de\u0020datos\u0020mediante\u0020PDO.",
+            "url": "classes/DepartamentoPDO.html"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorCod\u0028\u0029",
+            "name": "buscaDepartamentoPorCod",
+            "summary": "B\u00FAsqueda\u0020de\u0020departamento\u0020por\u0020c\u00F3digo.",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorCod"
+        },                {
+            "fqsen": "\\Libro",
+            "name": "Libro",
+            "summary": "Modelo\u003A\u0020Libro",
+            "url": "classes/Libro.html"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Libro.html#method___construct"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AgetTitulo\u0028\u0029",
+            "name": "getTitulo",
+            "summary": "",
+            "url": "classes/Libro.html#method_getTitulo"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AgetAutor\u0028\u0029",
+            "name": "getAutor",
+            "summary": "",
+            "url": "classes/Libro.html#method_getAutor"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AgetEditorial\u0028\u0029",
+            "name": "getEditorial",
+            "summary": "",
+            "url": "classes/Libro.html#method_getEditorial"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AgetAnyoEdicion\u0028\u0029",
+            "name": "getAnyoEdicion",
+            "summary": "",
+            "url": "classes/Libro.html#method_getAnyoEdicion"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AgetPaginas\u0028\u0029",
+            "name": "getPaginas",
+            "summary": "",
+            "url": "classes/Libro.html#method_getPaginas"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AgetImagen\u0028\u0029",
+            "name": "getImagen",
+            "summary": "",
+            "url": "classes/Libro.html#method_getImagen"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AgetLink\u0028\u0029",
+            "name": "getLink",
+            "summary": "",
+            "url": "classes/Libro.html#method_getLink"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AsetTitulo\u0028\u0029",
+            "name": "setTitulo",
+            "summary": "",
+            "url": "classes/Libro.html#method_setTitulo"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AsetAutor\u0028\u0029",
+            "name": "setAutor",
+            "summary": "",
+            "url": "classes/Libro.html#method_setAutor"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AsetEditorial\u0028\u0029",
+            "name": "setEditorial",
+            "summary": "",
+            "url": "classes/Libro.html#method_setEditorial"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AsetAnyoEdicion\u0028\u0029",
+            "name": "setAnyoEdicion",
+            "summary": "",
+            "url": "classes/Libro.html#method_setAnyoEdicion"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AsetPaginas\u0028\u0029",
+            "name": "setPaginas",
+            "summary": "",
+            "url": "classes/Libro.html#method_setPaginas"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AsetImagen\u0028\u0029",
+            "name": "setImagen",
+            "summary": "",
+            "url": "classes/Libro.html#method_setImagen"
+        },                {
+            "fqsen": "\\Libro\u003A\u003AsetLink\u0028\u0029",
+            "name": "setLink",
+            "summary": "",
+            "url": "classes/Libro.html#method_setLink"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A\u0024titulo",
+            "name": "titulo",
+            "summary": "",
+            "url": "classes/Libro.html#property_titulo"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A\u0024autor",
+            "name": "autor",
+            "summary": "",
+            "url": "classes/Libro.html#property_autor"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A\u0024editorial",
+            "name": "editorial",
+            "summary": "",
+            "url": "classes/Libro.html#property_editorial"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A\u0024anyoEdicion",
+            "name": "anyoEdicion",
+            "summary": "",
+            "url": "classes/Libro.html#property_anyoEdicion"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A\u0024paginas",
+            "name": "paginas",
+            "summary": "",
+            "url": "classes/Libro.html#property_paginas"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A\u0024imagen",
+            "name": "imagen",
+            "summary": "",
+            "url": "classes/Libro.html#property_imagen"
+        },                {
+            "fqsen": "\\Libro\u003A\u003A\u0024link",
+            "name": "link",
+            "summary": "",
+            "url": "classes/Libro.html#property_link"
+        },                {
+            "fqsen": "\\Provincia",
+            "name": "Provincia",
+            "summary": "Description\u0020of\u0020Provincia",
+            "url": "classes/Provincia.html"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/Provincia.html#method___construct"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003AgetProvincia\u0028\u0029",
+            "name": "getProvincia",
+            "summary": "",
+            "url": "classes/Provincia.html#method_getProvincia"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003AgetIdProvincia\u0028\u0029",
+            "name": "getIdProvincia",
+            "summary": "",
+            "url": "classes/Provincia.html#method_getIdProvincia"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003AgetDescripcion\u0028\u0029",
+            "name": "getDescripcion",
+            "summary": "",
+            "url": "classes/Provincia.html#method_getDescripcion"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003AgetTiempo\u0028\u0029",
+            "name": "getTiempo",
+            "summary": "",
+            "url": "classes/Provincia.html#method_getTiempo"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003AgetTemperaturaMax\u0028\u0029",
+            "name": "getTemperaturaMax",
+            "summary": "",
+            "url": "classes/Provincia.html#method_getTemperaturaMax"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003AgetTemperaturaMin\u0028\u0029",
+            "name": "getTemperaturaMin",
+            "summary": "",
+            "url": "classes/Provincia.html#method_getTemperaturaMin"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003A\u0024provincia",
+            "name": "provincia",
+            "summary": "",
+            "url": "classes/Provincia.html#property_provincia"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003A\u0024idProvincia",
+            "name": "idProvincia",
+            "summary": "",
+            "url": "classes/Provincia.html#property_idProvincia"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003A\u0024descripcion",
+            "name": "descripcion",
+            "summary": "",
+            "url": "classes/Provincia.html#property_descripcion"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003A\u0024tiempo",
+            "name": "tiempo",
+            "summary": "",
+            "url": "classes/Provincia.html#property_tiempo"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003A\u0024temperaturaMax",
+            "name": "temperaturaMax",
+            "summary": "",
+            "url": "classes/Provincia.html#property_temperaturaMax"
+        },                {
+            "fqsen": "\\Provincia\u003A\u003A\u0024temperaturaMin",
+            "name": "temperaturaMin",
+            "summary": "",
+            "url": "classes/Provincia.html#property_temperaturaMin"
+        },                {
+            "fqsen": "\\REST",
+            "name": "REST",
+            "summary": "",
+            "url": "classes/REST.html"
+        },                {
+            "fqsen": "\\REST\u003A\u003Aprovincia\u0028\u0029",
+            "name": "provincia",
+            "summary": "Funcion\u0020que\u0020devuelve\u0020un\u0020objeto\u0020provincia\u0020con\u0020los\u0020datos\u0020devueltos\u0020por\u0020la\u0020API.",
+            "url": "classes/REST.html#method_provincia"
+        },                {
+            "fqsen": "\\REST\u003A\u003AbuscarLibrosPorTitulo\u0028\u0029",
+            "name": "buscarLibrosPorTitulo",
+            "summary": "Uso\u0020de\u0020la\u0020API\u0020REST\u0020\u0020de\u0020Google\u0020Books\u0020mediante\u0020el\u0020protocolo\u0020HTML\u0020para\nconsultar\u0020libros\u0020introduciendo\u0020un\u0020t\u00EDtulo\u0020como\u0020par\u00E1metro.",
+            "url": "classes/REST.html#method_buscarLibrosPorTitulo"
         },                {
             "fqsen": "\\",
             "name": "\\",

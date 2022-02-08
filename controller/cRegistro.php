@@ -60,10 +60,10 @@ if ($bEntradaOK) {
 
 
     // Almacenamiento del usuario y la fecha-hora de última conexión.
-    unset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']);
-    $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'] = $oUsuario;
+    unset($_SESSION['usuarioDAW208ProyectoFinal']);
+    $_SESSION['usuarioDAW208ProyectoFinal'] = $oUsuario;
     
-    $path = RUTA_IMG.$_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']->getCodUsuario();
+    $path = RUTA_IMG.$_SESSION['usuarioDAW208ProyectoFinal']->getCodUsuario();
     
     if (!file_exists($path)) {
         mkdir($path, 0777, true);

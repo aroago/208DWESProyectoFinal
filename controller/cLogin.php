@@ -15,8 +15,10 @@ if(isset($_REQUEST['login'])){
         if(validacionFormularios::comprobarAlfaNumerico($_REQUEST["usuario"], 255, MIN_TAMANIO, OBLIGATORIO)==null && validacionFormularios::comprobarAlfaNumerico($_REQUEST["password"], 8, MIN_TAMANIO, 1, OBLIGATORIO)==null){
             $oUsuario = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["password"]);
             if($oUsuario){
+                $oUsuario->setNumConexiones($oUsuario->getNumConexiones()+1);
                 UsuarioPDO::registrarUltimaConexion($oUsuario->getCodUsuario());
-                $_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'] = $oUsuario;
+                
+                $_SESSION['usuarioDAW208ProyectoFinal'] = $oUsuario;
                 
                 $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
                 $_SESSION['paginaEnCurso'] = 'inicio';

@@ -5,7 +5,7 @@
  * Created on: 26/1/2022
  * Last modification: 26/1/2022
  */
-if (!isset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'])) {
+if (!isset($_SESSION['usuarioDAW208ProyectoFinal'])) {
     header('location: ./index.php');
     exit;
 }

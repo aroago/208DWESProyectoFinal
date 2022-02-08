@@ -31,4 +31,14 @@ define("PASSWORD", "daw2_Sauces");
 //define("USER", "User208DWESProyectoTema5");
 /* Contraseña con la que conectarse a la base de datos */
 //define("PASSWORD", "P@ssw0rd");
+
+//ENTORNO 000webHost
+
+/* IP del servidor y Nombre de la base de datos*/
+//define("HOST", "mysql:dbname=id18399839_db208dwesproyectotema5;host=localhost");
+/* Usuario con el que se conecta */
+//define("USER", "id18399839_user208dwesproyectotema5");
+/* Contraseña con la que conectarse a la base de datos */
+//define("PASSWORD", "daw2_SaucesA");
+
 ?>
