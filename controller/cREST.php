@@ -80,6 +80,9 @@ if ($bEntradaOKPropio) {//utilizacion de la web service cuando bEntrada=true
         $fechaCreacionDepartamento = $oResultadoDep->getFechaCreacionDepartamento();
     } else {
         $aErrores["eBuscarPropio"] = "Departamento no encontrado";
+        $aErrorDepartamento=[
+                    $oResultadoDep
+                ];
     }
 }
 
