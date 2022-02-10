@@ -21,6 +21,7 @@
         $oDepartamento = DepartamentoPDO::buscaDepartamentoPorCod($_GET['codDepartamento']);
         if($oDepartamento){
             $aRespuesta=[
+                "respuestaOK"=>$bRespuestaOK,
                 "departamento"=>[
                     "codDepartamento" => $oDepartamento->getCodDepartamento(),
                     "descDepartamento" => $oDepartamento->getDescDepartamento(),
@@ -33,6 +34,7 @@
         else{
             $bRespuestaOK=false;
             $aRespuesta=[
+                "respuestaOK"=>$bRespuestaOK,
                 "error"=>"Departamento no encontrado con ese codigo"
             ];
         }
@@ -41,6 +43,7 @@
     else{
         $bRespuestaOK=false;
         $aRespuesta=[
+                "respuestaOK"=>$bRespuestaOK,
                 "error"=>"Ha habido un problema con el API REST"
             ];
     }

@@ -85,15 +85,10 @@ class REST {
      * @return \Departamento
      */
     public static function buscarDepartamento($codDepartamento) {
-        $oDepartamento = null;
-        $sResultadoRawData = false;
-       
          $sResultadoRawData = file_get_contents("https://daw208.ieslossauces.es/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
+         $aJson = json_decode($sResultadoRawData, true); //decodificamos el json y lo devolvemos en un array
         
-        
-        if ($sResultadoRawData) {//si el servidor no ha dado fallo
-            $aJson = json_decode($sResultadoRawData, true); //decodificamos el json y lo devolvemos en un array
-
+        if ($aJson['respuestaOK']) {//si el servidor no ha dado fallo
             $oDepartamento = new Departamento($aJson['departamento']['codDepartamento'],
                     $aJson['departamento']['descDepartamento'],
                     $aJson['departamento']['fechaCreacionDepartamento'],
@@ -103,7 +98,7 @@ class REST {
              return $oDepartamento;//si ha dado error devuelce null.
         }else{
             
-             return $sResultadoRawData['error'];
+             return $aJson['error'];
         }
 
        
