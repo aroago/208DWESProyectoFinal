@@ -16,17 +16,22 @@ $aRespuestas = [
     "busquedaLibro" => ""
 ];
 
-
-
-
 if (isset($_REQUEST['volver'])) {
-    unset($_SESSION['APIrest']);
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     $_SESSION['paginaAnterior'] = "rest";
     header('location: ./index.php');
     exit;
 }
 
+if (isset($_REQUEST['infoapirest'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = "infoAPI";
+
+    header('location: ./index.php');
+    exit;
+}
+
+    
 if (isset($_REQUEST['buscarSubmit'])) {
     $aErrores['eBuscarInput'] = validacionFormularios::comprobarEntero($_REQUEST['buscarInput'], 52, 1, OBLIGATORIO);
 

@@ -2070,3 +2070,17 @@ h3{
     width: 350px;
     height: 350px;
 }
+.infoapirest{
+    font-family: monospace;
+    font-weight: bold;
+    width: 19px;
+    height: 19px;
+    font-size: 62%;
+    text-align: center;
+    background-color: #3e6ae1;
+    color: white;
+    cursor: pointer;
+    border-radius: 32px;
+    border: none;
+    margin-left: 3px;
+}
