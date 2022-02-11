@@ -85,7 +85,7 @@ class REST {
      * @return \Departamento
      */
     public static function buscarDepartamento($codDepartamento) {
-         $sResultadoRawData = file_get_contents("http://daw208.sauces.local/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
+         $sResultadoRawData = file_get_contents("https://daw208.ieslossauces.es/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=$codDepartamento");
          $aJson = json_decode($sResultadoRawData, true); //decodificamos el json y lo devolvemos en un array
         
         if ($aJson['respuestaOK']) {//si el servidor no ha dado fallo
