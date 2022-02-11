@@ -161,7 +161,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <form action="index.php" method="post">
-                                            <legend>Busqueda de Departamentos <a href="#" target="_blank"><i class="bi bi-info-circle-fill"></i></a></legend>
+                                            <legend>Busqueda de Departamentos <input type="submit" value="i"  class="infoapirest" name="infoapirest"/></legend>
                                             <div style="with:50%;height: 30%;border:solid 2px #000; word-break:break-all;background: rgba(0, 0, 0, 0.486);padding: 20px 0px 0px 20px;margin-bottom: 5px">
                                                 <p style=" text-align: justify;font-size: 18px; font-weight: 50;">Servicio web que sirve para consultar los datos de un Departamento 
                                                     de esta base de datos a través de su codigo.</p>
@@ -202,7 +202,7 @@
                                 </h1>
                                 <h1 class="mensajeRest">
                                     <span class="tituloRest"> Fecha Creacion Departamento:</span><?php
-                                    echo $fechaCreacionDepartamento; //Devuelve el campo que ha escrito previamente el usuario.
+                                     echo date('d/m/Y H:i:s',$fechaCreacionDepartamento); //Devuelve el campo que ha escrito previamente el usuario.
                                     ?>
 
                                 </h1>

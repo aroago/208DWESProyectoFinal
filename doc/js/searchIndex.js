@@ -671,6 +671,11 @@ Search.appendIndex(
             "summary": "Uso\u0020de\u0020la\u0020API\u0020REST\u0020\u0020de\u0020Google\u0020Books\u0020mediante\u0020el\u0020protocolo\u0020HTML\u0020para\nconsultar\u0020libros\u0020introduciendo\u0020un\u0020t\u00EDtulo\u0020como\u0020par\u00E1metro.",
             "url": "classes/REST.html#method_buscarLibrosPorTitulo"
         },                {
+            "fqsen": "\\REST\u003A\u003AbuscarDepartamento\u0028\u0029",
+            "name": "buscarDepartamento",
+            "summary": "Funcion\u0020que\u0020devuelve\u0020un\u0020objeto\u0020provincia\u0020con\u0020los\u0020datos\u0020devueltos\u0020por\u0020la\u0020API.",
+            "url": "classes/REST.html#method_buscarDepartamento"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
