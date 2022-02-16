@@ -5,7 +5,7 @@ include 'model/REST.php';
 $bEntradaOK = true;
 $bEntradaOKLibros = true;
 $bEntradaOKPropio = true;
-
+$bEntradaOKAjeno = true;
 // Variable de mensaje de error.
 $aErrores = ['eBuscarInput' => null,
     'eResultado' => null,
@@ -124,6 +124,40 @@ if ($bEntradaOKLibros) {
     }
 }
 
+$aErroresDepartamento = [ //Array de errores
+    'eBuscarDepartamento' => null,
+    'eResultado' => null
+];
+
+if (isset($_REQUEST['buscarPropioA'])) {
+    $aErroresDepartamento['eBuscarDepartamento'] = validacionFormularios::comprobarAlfabetico($_REQUEST['buscarInputPropioA'], 3, 3, OBLIGATORIO); //Valido los datos pasados por teclado de codigo departamento
+    
+    //Comprobar si algun campo del array de errores ha sido rellenado
+    foreach ($aErroresDepartamento as $campo => $error) {//recorro el array errores
+        if ($error != null) {//Compruebo si hay algun error
+            $bEntradaOKAjeno = false;//Le doy el valor false a entradaOK
+            $_REQUEST[$campo] = '';//Limpio el campo del formulario
+        }
+    }
+}else{ //Si el usuario no le ha dado al boton de buscar
+    $bEntradaOKAjeno = false;
+}
+
+if($bEntradaOKAjeno){
+    $oResultadoDepAjeno = REST::buscarDepartamentoAjeno($_REQUEST['buscarInputPropioA']);
+   
+    if(is_object($oResultadoDepAjeno)){
+         $aDepartamento = [
+            'codDepartamento' => $oResultadoDepAjeno->getCodDepartamento(),
+            'descDepartamento' => $oResultadoDepAjeno->getDescDepartamento(),
+            'fechaCreacionDepartamento' => $oResultadoDepAjeno->getFechaCreacionDepartamento(),
+            'volumenDeNegocio' => $oResultadoDepAjeno->getVolumenDeNegocio(),
+            'fechaBajaDepartamento' => $oResultadoDepAjeno->getFechaBajaDepartamento()
+        ];
+    }else{
+        $aErroresDepartamento['eResultado'] = $oResultadoDepAjeno;
+    }
+}
 
 include $aVistas['layout'];
 ?>
