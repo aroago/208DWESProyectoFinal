@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Conexión de departamentos con la base de datos mediante PDO.
  * 
@@ -37,17 +38,18 @@ class DepartamentoPDO {
             return false;
         }
     }
- /**
-         * Búsqueda de un departamento introduciendo la descripción como
-         * parámetro
-         * 
-         * @param String $descripcionDepartamento Descripción del departamento
-         * a buscar.
-         * @param Int $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
-         * están de alta; 2 para buscar los que están de baja.
-         * @return PDOStatement Resultado del insert.
-         */
-        public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda=0){
+
+    /**
+     * Búsqueda de un departamento introduciendo la descripción como
+     * parámetro
+     * 
+     * @param String $descripcionDepartamento Descripción del departamento
+     * a buscar.
+     * @param Int $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
+     * están de alta; 2 para buscar los que están de baja.
+     * @return PDOStatement Resultado del insert.
+     */
+    public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda=0){
             
             switch($tipoBusqueda){
                 case 0: $sQueryTipoBusqueda='';
@@ -67,4 +69,5 @@ class DepartamentoPDO {
 
             return DBPDO::ejecutarConsulta($sSelect);
         }
+
 }

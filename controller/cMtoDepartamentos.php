@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author: Aroa Granero Omañas
  * @version: v1
@@ -6,6 +7,7 @@
  * Last modification: 17/2/2022
  */
 if (isset($_REQUEST['volver'])) {
+
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'inicio';
     header('Location: index.php');
@@ -46,51 +48,81 @@ if (isset($_REQUEST['rehabilitar'])) {
     header('Location: index.php');
     exit;
 }
+if(isset($_REQUEST['paginaAnterior']) && $_SESSION['numPaginacionDepartamentos']>1){
+        $_SESSION['numPaginacionDepartamentos']--;
+        
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['paginaSiguiente'])){
+        $_SESSION['numPaginacionDepartamentos']++;
+        
+        header('Location: index.php');
+        exit;
+    }
+    
+    if(isset($_REQUEST['primeraPagina'])){
+        $_SESSION['numPaginacionDepartamentos']=1;
+        
+        header('Location: index.php');
+        exit;
+    }
+if (isset($_REQUEST['paginaUltima'])) {
 
+    // Recarga la página.
+    header('Location: index.php');
+    exit;
+}
 
-
-$aErrores = [
-    "busquedaDesc" => ""
-];
-$aRespuestas = [
-    "busquedaDesc" => ""
-];
-
-$bEntradaOK = true;
-
-if (isset($_REQUEST['buscar'])) {
-    $aErrores['busquedaDesc'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaDesc'], 255, 1);
-
-    foreach ($aErrores as $clave => $error) {
-        //condición de que hay un error
-        if (($error) != null) {
-            $bEntradaOK = false;
+  
+    $aErrores=[
+      "busquedaDesc" => ""  
+    ];
+    $aRespuestas=[
+      "busquedaDesc" => ""  
+    ];
+    
+    $bEntradaOK=true;
+    
+    if(isset($_REQUEST['buscar'])){
+        $aErrores['busquedaDesc']= validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaDesc'], 255, 1);
+    
+        foreach($aErrores as $clave => $error){
+            //condición de que hay un error
+            if(($error)!=null){
+                $bEntradaOK=false;
+            }
         }
     }
-} else {
-    $bEntradaOK = false;
-    $oDepartamentos = DBPDO::ejecutarConsulta("SELECT * FROM T02_Departamento");
-    $oResultado = $oDepartamentos->fetchObject();
-}
-if ($bEntradaOK) {
-    $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] = $_REQUEST['busquedaDesc'];
-    $_SESSION['criterioBusquedaDepartamentos']['estado'] = $_REQUEST['tipoCriterio'];
-
-    if (isset($_REQUEST['busquedaDesc'])) {
-        $aRespuestas['busquedaDesc'] = $_REQUEST['busquedaDesc'];
-        $oDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc'], $_SESSION['criterioBusquedaDepartamentos']['estado']);
-        $oResultado = $oDepartamentos->fetchObject();
+    else{
+        $bEntradaOK=false;
+        $oDepartamentos=DBPDO::ejecutarConsulta("SELECT * FROM T02_Departamento");
+        $oResultado=$oDepartamentos->fetchObject();
     }
-}
-$aDepartamentos = [];
-$contador = 0;
-while ($oResultado != null) {
-    foreach ($oResultado as $clave => $valor) {
-        $aDepartamentos[$contador][$clave] = $valor;
+    if($bEntradaOK){
+        $_SESSION['criterioBusquedaDepartamentos']['descripcionBusqueda'] = $_REQUEST['busquedaDesc'];
+        $_SESSION['criterioBusquedaDepartamentos']['estado'] = $_REQUEST['tipoCriterio'];
+        
+        if(isset($_REQUEST['busquedaDesc'])){
+            $aRespuestas['busquedaDesc']=$_REQUEST['busquedaDesc'];
+            $oDepartamentos= DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestas['busquedaDesc'],$_SESSION['criterioBusquedaDepartamentos']['estado']);
+            $oResultado=$oDepartamentos->fetchObject();
+        }
+        
     }
-    $contador++;
-    $oResultado = $oDepartamentos->fetchObject();
-}
+    $aDepartamentos=[];
+    $contador=0;
+    while($oResultado!=null){
+        foreach($oResultado as $clave=>$valor){
+            $aDepartamentos[$contador][$clave]=$valor;
+        }
+        $contador++;
+        $oResultado=$oDepartamentos->fetchObject();
+    }
+    
+    
+    
 
 include $aVistas['layout'];
 ?>

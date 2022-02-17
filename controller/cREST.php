@@ -159,5 +159,5 @@ if($bEntradaOKAjeno){
     }
 }
 
-include $aVistas['mtoDepartamentos'];
+include $aVistas['layout'];
 ?>

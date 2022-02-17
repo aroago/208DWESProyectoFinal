@@ -98,7 +98,13 @@
                                 }
                                 ?>
                             </table>
-                        </form>
+<!--                            <div class="paginacion">
+                                <button name="primeraPagina">&#60 &#60;</button>
+                                <button name="paginaAnterior">&#60;</button>
+                                <span><?php// echo $_SESSION['numPaginacionDepartamentos'] ?></span>
+                                <button name="paginaSiguiente">&#62;</button>
+                                <button name="paginaUltima">&#62 &#62</button>
+                            </div>-->
                     </div>
                 </div>
             </section>

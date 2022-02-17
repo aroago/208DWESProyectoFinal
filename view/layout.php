@@ -41,10 +41,7 @@
         <!-- Copyright -->
         <div id="copyright">
             <p>&copy;2021 Todos los derechos reservados AroaGO----Fecha de Modificación:22/01/2022
-                <a style="padding-left:10%;" type="application/herramientas" href="#" target="_blank">
-                    <img class="iconoIMG" alt="herramientas" src="./webroot/css/images/herramientas.png" width="40px" height="40px" />
 
-                </a>
                 <a type="application/github" href="https://github.com/aroago/208DWESProyectoFinal" target="_blank">
                     <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/github.png" width="40px" height="40px" />
 
@@ -69,7 +66,12 @@
                     <img class="iconoIMG" alt="gitHub" src="./webroot/css/images/wwwcopia.png" width="40px" height="40px" />
 
                 </a>
-            </p>
-        </div>
+            <form method="post" class="formularioTecnologias">
+                <button type="submit" name="tecnologias" value="tecnologias" class="tecnologias" style=" border: none; background: transparent;">
+                    <img class="iconoIMG" alt="herramientas" src="./webroot/css/images/herramientas.png" width="40px" height="40px" />
+                </button>
+            </form>
+        </p>
+    </div>
 </html>
 
