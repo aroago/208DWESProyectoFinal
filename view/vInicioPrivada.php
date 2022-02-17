@@ -40,7 +40,7 @@
 
                                     <div class="col-3 col-6-medium col-12-small">
                                         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" class="formularioInicioPrivada">
-                                            <input type='submit'class="btnlogin"  name='mtoDep' value='Mantenimiento Departamentos'/>
+                                            <input type='submit'class="btnlogin"  name='mtoDepartamentos' value='Mantenimiento Departamentos'/>
                                             <input type='submit' class="btnlogin" name='detalle' value='Detalle'/>
                                             <input type='submit'class="btnlogin" name='saltarError' value='Saltar_Error'/>
                                             <input type='submit' class="btnlogin" name='rest' value='REST'/>
