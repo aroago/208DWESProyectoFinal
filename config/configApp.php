@@ -42,7 +42,8 @@ $aControladores = [
     'borrarCuenta' => 'controller/cBorrarCuenta.php',
     'cambiarPassword' => 'controller/cCambiarPassword.php',
     'mtoDepartamentos' => 'controller/cMtoDepartamentos.php',
-    'infoAPI' => 'controller/cInfoApiPropia.php'
+    'infoAPI' => 'controller/cInfoApiPropia.php',
+    'tecnologias' => 'controller/cTecnologias.php'
 ];
 
 //Array de las vistas
@@ -60,7 +61,8 @@ $aVistas = [
     'borrarCuenta' => 'view/vBorrarCuenta.php',
     'cambiarPassword' => 'view/vCambiarPassword.php',
     'mtoDepartamentos' => 'view/vMtoDepartamentos.php',
-    'infoAPI' => 'view/vInfoApiPropia.php'
+    'infoAPI' => 'view/vInfoApiPropia.php',
+    'tecnologias' => 'view/vTecnologias.php'
 ];
 ?>
 

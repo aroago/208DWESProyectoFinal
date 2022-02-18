@@ -214,6 +214,60 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <form action="index.php" method="post">
+                                            <legend>Busqueda de Departamentos Ajeno <input type="submit" value="i"  class="infoapirest" name="infoapirestA"/></legend>
+                                            <div style="with:50%;height: 30%;border:solid 2px #000; word-break:break-all;background: rgba(0, 0, 0, 0.486);padding: 20px 0px 0px 20px;margin-bottom: 5px">
+                                                <p style=" text-align: justify;font-size: 18px; font-weight: 50;">Servicio web que sirve para consultar los datos de un Departamento 
+                                                    de esta base de datos a través de su codigo.</p>
+                                            </div> 
+                                            <input name="buscarInputPropioA" type="text" placeholder="Buscar Departamento" value="<?php echo isset($_REQUEST['buscarInputPropioA']) ? $_REQUEST['buscarInputPropioA'] : null; ?>">
+                                            <input type="submit" class="btnlogin" name="buscarPropioA"/>
+                                            <br>
+                                            <span style="color:red">
+                                                <?php
+                                               //Compruebo que el array de errores no está vacío.
+                                                    echo  $aErroresDepartamento['eBuscarDepartamento'];
+                                                    echo  $aErroresDepartamento['eResultado'];//Si hay errores, devuelve el campo vacío y muestra una advertencia de los errores y como tiene que estar escrito ese campo.
+                                                
+                                                ?>
+                                            </span>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!--resultado-->
+                            <?php if ( $aErroresDepartamento["eBuscarDepartamento"] == null && $aErroresDepartamento["eResultado"] == null && isset($_REQUEST["buscarInputPropioA"]) && $oResultadoDepAjeno != null) { //Compruebo  que los campos del array de errores están vacíos y el usuario le ha dado al botón de enviar. ?>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest"> CodDepartamento:</span> <?php
+                                    echo $aDepartamento['codDepartamento']; //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+                                </h1>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest">Descripcion Departamento:</span> <?php
+                                    echo $aDepartamento['descDepartamento']; //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+                                </h1>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest"> Volumen Departamento:</span><?php
+                                    echo $aDepartamento['volumenDeNegocio']; //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+                                </h1>
+                                <h1 class="mensajeRest">
+                                    <span class="tituloRest"> Fecha Creacion Departamento:</span><?php
+                                     echo date('d/m/Y H:i:s', $aDepartamento['fechaCreacionDepartamento']); //Devuelve el campo que ha escrito previamente el usuario.
+                                    ?>
+
+                                </h1>
+
+                            <?php } ?>
+                        </div>
+                        <div id="banner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <form action="index.php" method="post">
                                             <legend>Busqueda de Libros <a href="https://developers.google.com/books/docs/v1/getting_started" target="_blank"><i class="bi bi-info-circle-fill"></i></a></legend>
                                             <div style="with:50%;height: 30%;border:solid 2px #000; word-break:break-all;background: rgba(0, 0, 0, 0.486);padding: 20px 0px 0px 20px;margin-bottom: 5px">
                                                 <p style=" text-align: justify;font-size: 18px; font-weight: 50;">Servicio web que sirve para consultar un libro. No necesariamente busca por título, pero es su prioridad. 

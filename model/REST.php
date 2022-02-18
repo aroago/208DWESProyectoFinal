@@ -100,7 +100,26 @@ class REST {
             
              return $aJson['error'];
         }
-
+    }
+    public static function buscarDepartamentoAjeno($codDepartamentoA) {
+        $resultadoAPI = @file_get_contents("http://daw207.ieslossauces.es/207DWESAplicaccionFinalAlberto2022/api/buscarDepartamento.php?codDepartamento={$codDepartamentoA}"); //La respuesta de la api en formato json
+        
+        if($resultadoAPI){
+            $JSONDecodificado = json_decode($resultadoAPI, true); //Almaceno la informacion decodificada obtenida de la url como un array
+            
+            if($JSONDecodificado['result'] == 'success'){
+                return new Departamento(
+                    $JSONDecodificado['codDepartamento'],
+                    $JSONDecodificado['descDepartamento'],
+                    $JSONDecodificado['fechaCreacionDepartamento'],
+                    $JSONDecodificado['volumenDeNegocio'],
+                    $JSONDecodificado['fechaBajaDepartamento']
+                );
+            }
+            if($JSONDecodificado['result'] == 'unsuccessful'){
+                return $JSONDecodificado['mensajeError'];
+            }
+        }
        
     }
 
