@@ -115,13 +115,15 @@ class UsuarioPDO implements UsuarioDB {
             return false;
         }
     }
-public static function mostrarUsuarios() {
+
+    public static function mostrarUsuarios() {
         $sMostrar = <<<QUERY
             select * FROM T01_Usuario;
         QUERY;
 
         return DBPDO::ejecutarConsulta($sMostrar);
     }
+
     /**
      * Eliminación de usuario.
      * 
@@ -140,7 +142,7 @@ public static function mostrarUsuarios() {
     }
 
     public static function registrarUltimaConexion($codigoUsuario) {
-        
+
         $sUpdate = <<<QUERY
             UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,
             T01_FechaHoraUltimaConexion = unix_timestamp()
@@ -148,6 +150,42 @@ public static function mostrarUsuarios() {
         QUERY;
 
         return DBPDO::ejecutarConsulta($sUpdate);
+    }
+
+    /**
+     * Buscar usuario por Descripcion
+     * 
+     * Busqueda de un usuario por descripcion
+     * 
+     * @param Usuario $descUsuario
+     * @return array
+     */
+    public static function buscaUsuariosPorDesc($descUsuario) {
+        $aRespuesta = [];
+        $consultaBuscarUsuarioPorDesc = <<<CONSULTA
+            SELECT * FROM T01_Usuario WHERE T01_DescUsuario LIKE '%{$descUsuario}%' ;
+        CONSULTA;
+
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consultaBuscarUsuarioPorDesc); //Ejecuto la consulta y guardo el resultado en una variable
+        $aUsuario = $resultadoConsulta->fetchAll(); //Guardo en un array el conjunto de resultados del objeto resultado
+
+        if ($aUsuario) { //Si el array tiene valores, lo recorro y creo el objeto usuario
+            foreach ($aUsuario as $oUsuario) {
+                $aRespuesta[$oUsuario['T01_DescUsuario']] = new Usuario(
+                        $oUsuario['T01_CodUsuario'],
+                        $oUsuario['T01_Password'],
+                        $oUsuario['T01_DescUsuario'],
+                        $oUsuario['T01_NumConexiones'],
+                        $oUsuario['T01_FechaHoraUltimaConexion'],
+                        $oUsuario['T01_FechaHoraUltimaConexion'],
+                        $oUsuario['T01_Perfil'],
+                        $oUsuario['T01_ImagenUsuario']
+                );
+            }
+            return $aRespuesta; //Devuelvo el nuevo usuario
+        } else {
+            return false; //Devuelvo false
+        }
     }
 
 }

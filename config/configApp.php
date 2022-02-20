@@ -43,7 +43,8 @@ $aControladores = [
     'cambiarPassword' => 'controller/cCambiarPassword.php',
     'mtoDepartamentos' => 'controller/cMtoDepartamentos.php',
     'infoAPI' => 'controller/cInfoApiPropia.php',
-    'tecnologias' => 'controller/cTecnologias.php'
+    'tecnologias' => 'controller/cTecnologias.php',
+    'mtoUsuarios' => 'controller/cMtoUsuarios.php'
 ];
 
 //Array de las vistas
@@ -62,7 +63,8 @@ $aVistas = [
     'cambiarPassword' => 'view/vCambiarPassword.php',
     'mtoDepartamentos' => 'view/vMtoDepartamentos.php',
     'infoAPI' => 'view/vInfoApiPropia.php',
-    'tecnologias' => 'view/vTecnologias.php'
+    'tecnologias' => 'view/vTecnologias.php',
+    'mtoUsuarios' => 'view/vMtoUsuarios.php'
 ];
 ?>
 
