@@ -39,18 +39,18 @@ class DepartamentoPDO {
         }
     }
 
-    /**
-     * Búsqueda de un departamento introduciendo la descripción como
-     * parámetro
-     * 
-     * @param String $descripcionDepartamento Descripción del departamento
-     * a buscar.
-     * @param Int $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
-     * están de alta; 2 para buscar los que están de baja.
-     * @return PDOStatement Resultado del insert.
-     */
-    public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda=0){
-            
+     /**
+         * Búsqueda de un departamento introduciendo la descripción como
+         * parámetro
+         * 
+         * @param String $descripcionDepartamento Descripción del departamento
+         * a buscar.
+         * @param Integer $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
+         * están de alta; 2 para buscar los que están de baja.
+         * @return PDOStatement Resultado del insert.
+         */
+        public static function buscaDepartamentosPorDesc($descripcionDepartamento, $tipoBusqueda = 0, $pagina = 0){
+            $pagina=$pagina*3;
             switch($tipoBusqueda){
                 case 0: $sQueryTipoBusqueda='';
                     break;
@@ -64,10 +64,38 @@ class DepartamentoPDO {
              */
             $sSelect = <<<QUERY
                 SELECT * FROM T02_Departamento
-                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda};
+                WHERE T02_DescDepartamento LIKE '%{$descripcionDepartamento}%' {$sQueryTipoBusqueda} LIMIT {$pagina},3 
+                ;
             QUERY;
 
             return DBPDO::ejecutarConsulta($sSelect);
         }
-
+        
+        /**
+         * Contar el número de departamentos devueltos por la base de datos.
+         * 
+         * @param Integer $tipoBusqueda 0 para buscar entre todos los departamentos; 1 para buscar los que
+         * están de alta; 2 para buscar los que están de baja.
+         * @return Integer Número de departamentos devueltos.
+         */
+        public static function contarDepartamentos($tipoBusqueda = 0){
+            switch($tipoBusqueda){
+                case 0: $sQueryTipoBusqueda='';
+                    break;
+                case 1: $sQueryTipoBusqueda='WHERE T02_FechaBajaDepartamento IS NULL';
+                    break;
+                case 2: $sQueryTipoBusqueda='WHERE T02_FechaBajaDepartamento IS NOT NULL';
+                    break;
+            }
+            
+            $sSelect = <<<QUERY
+                SELECT COUNT(*) AS numDepartamentos FROM T02_Departamento 
+                {$sQueryTipoBusqueda};
+            QUERY;
+                
+            $oResultado = DBPDO::ejecutarConsulta($sSelect);
+            $oResultado = $oResultado->fetchObject();
+            
+            return intval($oResultado->numDepartamentos);
+        }
 }

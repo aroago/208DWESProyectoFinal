@@ -66,7 +66,7 @@
                                 <img src="webroot/img/netbeans.png">
                                 <img src="webroot/img/git.svg">
                             </div>
-                            <h3>Documentacion Tema1 Documentacion Tema2 by AlbertoFR</h3>
+                            <h3>Documentacion Tema1</h3>
                             <div class="logos">
                                 <a href="./webroot/pdf/EjerTEMA1.pdf" target="_blank"> <img src="webroot/img/documentacion.png"></a>
                                 <h3> Documentacion Tema2 by AlbertoFR</h3>
