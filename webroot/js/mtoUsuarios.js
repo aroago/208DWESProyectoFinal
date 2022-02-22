@@ -3,18 +3,20 @@ var botonBuscar = document.getElementById("buscar");
 loadJSONDoc();
 
 botonBuscar.addEventListener("click", function (evento) {
+    
     loadJSONDoc();
 });
 
 function loadJSONDoc() {
     var descripcionUsuario = document.getElementById("descUsuario").value;
-    var filas = document.getElementById("tablausuarios");
+    var filas = document.getElementById("usuarios");
     var divErrorBuscar = document.getElementById("divBuscar");
     var xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
         if (this.readyState == 4 && this.status == 200) {
             objetoJSON = JSON.parse(xhttp.responseText);
             var aUsuarios = objetoJSON.usuarios;
+            filas.innerHTML="";
             for (var i = 0; i < aUsuarios.length; i++) {
                 if (objetoJSON.usuarios[i].result == "unsuccessful") {
                     error = objetoJSON.usuarios[i].mensajeError;

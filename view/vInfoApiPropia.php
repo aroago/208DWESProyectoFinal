@@ -20,11 +20,11 @@
                 padding: 5px;
                 color:white;
                 width: 84%;
-                height: 44px;
+                height: 32px;
                 margin-left: 52px;
             }
             .parrafo{
-                color:black;
+                color:#ddddde;
                 font-size: 30px;
                 font-weight: bold;
             }
@@ -62,25 +62,44 @@
             <section id="features">
                 <div class="container">
                     <div class="col-3 col-6-medium col-12-small">
-                        <h3 class="parrafo">Enlace de la API:</h3>
-                        <pre>
+                        <div class="contenedorApi">
+                            <h3 class="parrafo">Enlace de la API REST Departamentos:</h3>
+                            <pre>
                                 https://daw208.ieslossauces.es/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php
-                        </pre>
-                        <h3 class="parrafo">Ejemplo:</h3>
-                        <pre>
+                            </pre>
+                            <h3 class="parrafo">Ejemplo:</h3>
+                            <pre>
                                 https://daw208.ieslossauces.es/208DWESProyectoFinal/api/consultaDepartamentoPorCodigo.php?codDepartamento=INF
-                        </pre>
-                        <h3 class="parrafo">Nombre del parametro que recoge:</h3>
-                        <pre style="width: 35%;">
+                            </pre>
+                            <h3 class="parrafo">Nombre del parametro que recoge:</h3>
+                            <pre style="width: 35%;">
                                 codDepartamento
-                        </pre>
-                        <h3 class="parrafo">Errores:</h3>
-                        <pre style="height:72px;">
+                            </pre>
+                            <h3 class="parrafo">Errores:</h3>
+                            <pre style="height:72px;">
                             En caso de error el valor de RespuestaOK pasa a ser false.
                              En vez de devolver un objeto con el departamento buscado, devuelve un mensaje de error.
-                         </pre>
-                      
-
+                            </pre>
+                        </div>
+                        <div class="contenedorApi">
+                            <h3 class="parrafo">Enlace de la API REST Usuarios:</h3>
+                            <pre>
+                               https://daw208.ieslossauces.es/208DWESProyectoFinal/api/buscarUsuariosPorDesc.php
+                            </pre>
+                            <h3 class="parrafo">Ejemplo:</h3>
+                            <pre>
+                                https://daw208.ieslossauces.es/208DWESProyectoFinal/api/buscarUsuariosPorDesc.php?descUsuario=admin
+                            </pre>
+                            <h3 class="parrafo">Nombre del parametro que recoge:</h3>
+                            <pre style="width: 35%;">
+                                descripcionUsuario
+                            </pre>
+                            <h3 class="parrafo">Errores:</h3>
+                            <pre style="height:72px;">
+                             En caso de error el valor de $entradaOK pasa a ser false.
+                             En vez de devolver un objeto con el usuario buscado, devuelve un mensaje de error.
+                            </pre>
+                        </div>
                     </div>
                 </div>
             </section>

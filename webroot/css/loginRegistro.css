@@ -2111,3 +2111,11 @@ h3{
     background-color: #2d5a78;
     height: 26px;
 }
+.mensajeErrorUsuario{
+    color:red;
+}
+.contenedorApi{
+   background: #252a2e;
+   padding: 10px;
+margin-bottom: 30px;
+}

@@ -107,7 +107,7 @@
                             </section>
 
                         </div>
-                        <div class="col-12 col-6-medium col-12-small">
+                        <div class="col-6 col-6-medium col-12-small">
 
                             <!-- Feature #4 -->
                             <section>
@@ -116,7 +116,25 @@
                             </section>
 
                         </div>
-                    </div>
+                        <div class="col-6 col-6-medium col-12-small">
+                            <!-- Feature #4 -->
+                            <section>
+                                <a href="./webroot/pdf/UsoDeLaSesion.pdf" class="bordered-feature-image" target="_blank"><img src="./webroot/img/usoSesion.PNG" alt="" /></a>
+                                <h2>Uso De la Sesión</h2>
+                            </section>
+
+                        </div>
+                        </div><div class="col-12 col-6-medium col-12-small">
+
+                            <!-- Feature #4 -->
+                            <section>
+                                <a href="./webroot/img/apiInfo.PNG" class="bordered-feature-image" target="_blank"><img src="./webroot/img/apiInfo.PNG" alt="" /></a>
+                                <h2>Información API REST</h2>
+                            </section>
+
+                        </div>
+                    
+                    
                 </div>
             </section>
  

@@ -52,15 +52,15 @@
                 <div class="container">
                     <div class="row">
                         <form action="index.php" method="post">
-                            <div id="divBuscar" class="menu">
+                            <div id="divBuscar" class="menu" style="margin: 10px 200px 10px 200px; color:black">
                                 <label for="descUsuario">Buscar por descripcion de usuario</label>
                                 <input name="descUsuario" id="descUsuario" class="descUsuarioBuscar" type="text" placeholder="Introduzca la descripcion">
                               <button type="button" id="buscar" name="buscar" class="btnlogin">Buscar</button>
                             </div>
                         </form>
-                        <div id="container">
+                        <div id="container" >
                             <table id="tablausuarios" class="tablaDepartamentos">
-                                <tr>
+                                <tr style="background: #b9c8d2">
                                     <th>Nombre</th>
                                     <th>Descripción</th>
                                     <th>Conexiones</th>
@@ -68,6 +68,9 @@
                                     <th>Perfil</th>
                                     <th>Imagen</th>
                                 </tr>
+                                <tbody id="usuarios">
+                                    
+                                </tbody>
                             </table>
                         </div>
                     </div>
