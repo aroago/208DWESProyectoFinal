@@ -13,6 +13,11 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link href="webroot/css/loginRegistro.css" rel="stylesheet" type="text/css" />
+        <style>
+            .rFiltrarDepartamento{
+                color:black;
+            }
+        </style>
     </head>
     <body>
         <div id="page-wrapper">
@@ -35,7 +40,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6 col-12-medium">
-
+                                <button class="btnlogin" name="altaDepartamento">Añadir departamento</button>
+                                <button class="btnlogin" name="importarDepartamentos">Importar departamentos</button>
+                                <button class="btnlogin" name="exportarDepartamentos">Exportar departamentos</button>
                             </div>
                         </div>
                     </div>
@@ -46,33 +53,29 @@
                 <div class="container">
                     <div class="row">
                         <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="departamentosFormulario" class="form">
-                            <div class="menu">
-                                <button class="btnlogin" name="altaDepartamento">Añadir departamento</button>
-                                <button class="btnlogin" name="importarDepartamentos">Importar departamentos</button>
-                                <button class="btnlogin" name="exportarDepartamentos">Exportar departamentos</button>
-                                <br>
+                            <div class="col-6 col-6-medium col-12-small">
 
-                                <label for="descDepartamento"><a class="pBuscarDepartamento">Buscar por descripcion de departamento</a></label>
+                                <label for="descDepartamento">Buscar por descripcion de departamento</label>
                                 <input name="descDepartamento" id="descDepartamento" type="text" value="<?php echo $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? ''; ?>" placeholder="Introduzca la descripcion">
-                                <input id="buscar" type="submit" name="buscar" value="Buscar"/>
+                                <input class="btnlogin" id="buscar" type="submit" name="buscar" value="Buscar"/>
                                 <p class="mensajeErrorDepartamento"><?php echo $aErrores['descBuscarDepartamento'] ?></p>
-
-                                <div>
-                                    <a class="pBuscarDepartamento">Estado: </a>
-                                    <input name="estado" id="tipoDepartamentoTodos" type="radio" value="todos" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_TODOS ? 'checked' : '') : 'checked'; ?>/>
-                                    <label for="tipoDepartamentoTodos"><a class="rFiltrarDepartamento">Todos</a></label>
-                                    <input name="estado" id="tipoDepartamentoAltas" type="radio" value="altas" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_ALTAS ? 'checked' : '') : ''; ?> />
-                                    <label for="tipoDepartamentoAltas"><a class="rFiltrarDepartamento">Altas</a></label>
-                                    <input name="estado" id="tipoDepartamentoBajas" type="radio" value="bajas" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_BAJAS ? 'checked' : '') : ''; ?> />
-                                    <label for="tipoDepartamentoBajas"><a class="rFiltrarDepartamento">Bajas</a></label>
-                                </div>
                             </div>
+                            <div style="display: flex;" >
+                                <p style="margin-left: 44px;color: black;font-size: x-large;">Estado:</p>
+                                <input name="estado" id="tipoDepartamentoTodos" type="radio" value="todos" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_TODOS ? 'checked' : '') : 'checked'; ?>/>
+                                <label for="tipoDepartamentoTodos"><a class="rFiltrarDepartamento" style="color:black">Todos</a></label>
+                                <input name="estado" id="tipoDepartamentoAltas" type="radio" value="altas" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_ALTAS ? 'checked' : '') : ''; ?> />
+                                <label for="tipoDepartamentoAltas"><a class="rFiltrarDepartamento" style="color:black">Altas</a></label>
+                                <input name="estado" id="tipoDepartamentoBajas" type="radio" value="bajas" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_BAJAS ? 'checked' : '') : ''; ?> />
+                                <label for="tipoDepartamentoBajas"><a class="rFiltrarDepartamento" style="color:black">Bajas</a></label>
+                            </div>
+
                         </form>
                         <table class="tablaDepartamentos">
                             <?php
                             if ($aDepartamentosVista != null) {
                                 ?>
-                                <tr>
+                                <tr id="theadMtoDep">
                                     <th>Código</th>
                                     <th>Descripción</th>
                                     <th>Fecha de alta</th>
@@ -92,9 +95,9 @@
                                         <td><?php echo $aDepartamento['volumenNegocio']; ?></td>
                                         <td><?php echo $aDepartamento['fechaBaja']; ?></td>
                                         <td class="botonestabla">
-                                            <img src="../webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
-                                            <img src="..//webroot/img/editar.png" class="imagenboton" alt="Ojo" />
-                                            <img src="../webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
+                                            <img src="./webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
+                                            <img src="./webroot/img/ojo.png" class="imagenboton" alt="Ojo" />
+                                            <img src="./webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
                                         </td>
                                     </tr>
                                     <?php
@@ -102,22 +105,28 @@
                             }
                             ?>
                         </table>
+                        <?php
+                        if ($aDepartamentosVista != null) {
+                            ?>
+                            <div class = "paginacion">
+                                <button type = "submit" form = "departamentosFormulario" name = "paginaPrimera" value = "paginaPrimera" class = "botonespaginado">
+                                    | &#60;
+                                </button>
+                                <button type = "submit" form = "departamentosFormulario" name = "paginaAnterior" value = "paginaAnterior" class = "botonespaginado">
+                                    &#60;
+                                </button>
+                                <?php echo $_SESSION['numPaginacionDepartamentos'];
+                                ?> / <?php echo ceil($iDepartamentosTotales); ?>
+                                <button type="submit" form="departamentosFormulario" name="paginaSiguiente" value="paginaSiguiente" class="botonespaginado">
+                                    &#62;
+                                </button>
+                                <button type="submit" form="departamentosFormulario" name="paginaUltima" value="paginaUltima" class="botonespaginado">
+                                    &#62; |
+                                </button>
+                            </div>
+                            <?php }
+                        ?>
 
-                        <div class="cajadepartamentosdos">
-                            <button type="submit" form="departamentosFormulario" name="paginaPrimera" value="paginaPrimera" class="botonespaginado">
-                                | &#60;
-                            </button>
-                            <button type="submit" form="departamentosFormulario" name="paginaAnterior" value="paginaAnterior" class="botonespaginado">
-                                &#60;
-                            </button>
-                            <div id="numPagina"><?php echo $_SESSION['numPaginacionDepartamentos']; ?> / <?php echo ceil($iDepartamentosTotales); ?></div>
-                            <button type="submit" form="departamentosFormulario" name="paginaSiguiente" value="paginaSiguiente" class="botonespaginado">
-                                &#62;
-                            </button>
-                            <button type="submit" form="departamentosFormulario" name="paginaUltima" value="paginaUltima" class="botonespaginado">
-                                &#62; |
-                            </button>
-                        </div>
                     </div>
                 </div>
             </section>

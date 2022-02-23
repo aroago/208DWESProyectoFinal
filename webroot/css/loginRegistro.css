@@ -2096,10 +2096,12 @@ h3{
 .tablaDepartamentos {
     color:black;
     text-align: center;
+     width: 100%;
 }
 .tablaDepartamentos th{
     font-size: 30px;
     padding: 20px;
+   
 }
 .paginacion
 {
@@ -2115,7 +2117,22 @@ h3{
     color:red;
 }
 .contenedorApi{
-   background: #252a2e;
-   padding: 10px;
-margin-bottom: 30px;
+    background: #252a2e;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+#theadMtoDep{
+    background: #b9c8d2;
+}
+.imagenboton{
+    width: 30px;
+    height: 30px;
+}
+.form{
+    display: flex;
+    width: 100%;
+}
+.mensajeErrorDepartamento{
+    color:red;
+    margin-left: 46%;
 }
