@@ -51,59 +51,71 @@
                                 <button class="btnlogin" name="importarDepartamentos">Importar departamentos</button>
                                 <button class="btnlogin" name="exportarDepartamentos">Exportar departamentos</button>
                                 <br>
-                                <input name="busquedaDesc" type="text" placeholder="Buscar por descripción..." value="<?php echo $_REQUEST['busquedaDesc'] ?? "" ?>">                     
-                                <button class="boton" name="buscar">Buscar</button>
-                                <input id="busquedaTodos" name="tipoCriterio" type="radio" value="0" <?php echo (!isset($_SESSION['criterioBusquedaDepartamentos']['estado']) || $_SESSION['criterioBusquedaDepartamentos']['estado'] == 0) ? "checked" : "" ?>>
-                                <label for="busquedaTodos">Todos</label>
-                                <input id="busquedaAlta" name="tipoCriterio" type="radio" value="1" <?php echo (isset($_SESSION['criterioBusquedaDepartamentos']['estado']) && $_SESSION['criterioBusquedaDepartamentos']['estado'] == 1) ? "checked" : "" ?>>
-                                <label for="busquedaAlta">Alta</label>
-                                <input id="busquedaBaja" name="tipoCriterio" type="radio" value="2"<?php echo (isset($_SESSION['criterioBusquedaDepartamentos']['estado']) && $_SESSION['criterioBusquedaDepartamentos']['estado'] == 2) ? "checked" : "" ?>>
-                                <label for="busquedaBaja">Baja</label>
+
+                                <label for="descDepartamento"><a class="pBuscarDepartamento">Buscar por descripcion de departamento</a></label>
+                                <input name="descDepartamento" id="descDepartamento" type="text" value="<?php echo $_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? ''; ?>" placeholder="Introduzca la descripcion">
+                                <input id="buscar" type="submit" name="buscar" value="Buscar"/>
+                                <p class="mensajeErrorDepartamento"><?php echo $aErrores['descBuscarDepartamento'] ?></p>
+
+                                <div>
+                                    <a class="pBuscarDepartamento">Estado: </a>
+                                    <input name="estado" id="tipoDepartamentoTodos" type="radio" value="todos" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_TODOS ? 'checked' : '') : 'checked'; ?>/>
+                                    <label for="tipoDepartamentoTodos"><a class="rFiltrarDepartamento">Todos</a></label>
+                                    <input name="estado" id="tipoDepartamentoAltas" type="radio" value="altas" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_ALTAS ? 'checked' : '') : ''; ?> />
+                                    <label for="tipoDepartamentoAltas"><a class="rFiltrarDepartamento">Altas</a></label>
+                                    <input name="estado" id="tipoDepartamentoBajas" type="radio" value="bajas" <?php echo isset($_SESSION['criterioBusquedaDepartamentos']['estado']) ? ($_SESSION['criterioBusquedaDepartamentos']['estado'] == ESTADO_BAJAS ? 'checked' : '') : ''; ?> />
+                                    <label for="tipoDepartamentoBajas"><a class="rFiltrarDepartamento">Bajas</a></label>
+                                </div>
                             </div>
                             <table class="tablaDepartamentos">
-                                <tr>
-                                    <th>Código</th>
-                                    <th>Descripción</th>
-                                    <th>Fecha de creación</th>
-                                    <th>Volumen de negocio</th>
-                                    <th>Fecha de baja</th>
-                                    <th>Editar</th>
-                                    <th>Baja</th>
-                                    <th>Eliminar</th>
-                                </tr>
                                 <?php
-                                foreach ($aDepartamentos as $departamento) {
+                                if ($aDepartamentosVista != null) {
                                     ?>
-                                    <tr class="<?php echo (empty($departamento['T02_FechaBajaDepartamento'])) ? "activo" : "baja" ?>">
-                                        <td class="codigo"><?php echo $departamento['T02_CodDepartamento'] ?></td>
-                                        <td><?php echo $departamento['T02_DescDepartamento'] ?></td>
-                                        <td><?php echo date("d/m/Y", $departamento['T02_FechaCreacionDepartamento']) ?></td>
-                                        <td><?php echo $departamento['T02_VolumenDeNegocio'] ?> €</td>
-                                        <td><?php echo!empty($departamento['T02_FechaBajaDepartamento']) ? date("d/m/Y", $departamento['T02_FechaBajaDepartamento']) : "" ?></td>
-                                        <td><button class="boton" name="editarDepartamento" value="<?php echo $departamento['T02_CodDepartamento'] ?>"><img src="webroot/img/editar.png"></button></td>
-                                        <?php
-                                        if (empty($departamento['T02_FechaBajaDepartamento'])) {
-                                            ?>
-                                            <td><button class="boton" name="bajaLogica" value="<?php echo $departamento['T02_CodDepartamento'] ?>"><img src="webroot/img/baja.png"></button></td>
-                                            <?php
-                                        } else {
-                                            ?>
-                                            <td><button class="boton" name="rehabilitar"  value="<?php echo $departamento['T02_CodDepartamento'] ?>"><img src="webroot/img/alta.png"></button></td>
-                                            <?php
-                                        }
-                                        ?>
-                                        <td><button class="boton" name="bajaFisica"  value="<?php echo $departamento['T02_CodDepartamento'] ?>"><img src="webroot/img/eliminar.png"></button></td>
-                                    </tr>    
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Fecha de alta</th>
+                                        <th>Volumen de negocio</th>
+                                        <th>Fecha de baja</th>
+                                        <th>Acciones</th>
+                                    </tr>
                                     <?php
+                                }
+                                if ($aDepartamentosVista) {
+                                    foreach ($aDepartamentosVista as $aDepartamento) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $aDepartamento['codDepartamento']; ?></td>
+                                            <td><?php echo $aDepartamento['descDepartamento']; ?></td>
+                                            <td><?php echo $aDepartamento['fechaAlta']; ?></td>
+                                            <td><?php echo $aDepartamento['volumenNegocio']; ?></td>
+                                            <td><?php echo $aDepartamento['fechaBaja']; ?></td>
+                                            <td class="botonestabla">
+                                                <img src="../webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
+                                                <img src="..//webroot/img/editar.png" class="imagenboton" alt="Ojo" />
+                                                <img src="../webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
                                 }
                                 ?>
                             </table>
-                            <div class="paginacion">
-                                <button class="boton" name="primeraPagina" <?php echo ($_SESSION['numPaginacionDepartamentos'] === 1) ? "disabled" : "" ?>>| &#60;</button>
-                                <button class="boton" name="paginaAnterior" <?php echo ($_SESSION['numPaginacionDepartamentos'] === 1) ? "disabled" : "" ?>>&#60;</button>
-                                <span><?php echo $_SESSION['numPaginacionDepartamentos'] . "/" . $_SESSION['numPaginas'] ?></span>
-                                <button class="boton" name="paginaSiguiente" <?php echo ($_SESSION['numPaginacionDepartamentos'] === $_SESSION['numPaginas']) ? "disabled" : "" ?>>&#62;</button>
-                                <button class="boton" name="ultimaPagina" <?php echo ($_SESSION['numPaginacionDepartamentos'] === $_SESSION['numPaginas']) ? "disabled" : "" ?>>&#62; |</button>
+
+                            <div class="cajadepartamentosdos">
+                                <button type="submit" form="departamentosFormulario" name="paginaPrimera" value="paginaPrimera" class="botonespaginado">
+                                    | &#60;
+                                </button>
+                                <button type="submit" form="departamentosFormulario" name="paginaAnterior" value="paginaAnterior" class="botonespaginado">
+                                    &#60;
+                                </button>
+                                <div id="numPagina"><?php echo $_SESSION['numPaginacionDepartamentos']; ?> / <?php echo ceil($iDepartamentosTotales); ?></div>
+                                <button type="submit" form="departamentosFormulario" name="paginaSiguiente" value="paginaSiguiente" class="botonespaginado">
+                                    &#62;
+                                </button>
+                                <button type="submit" form="departamentosFormulario" name="paginaUltima" value="paginaUltima" class="botonespaginado">
+                                    &#62; |
+                                </button>
                             </div>
                     </div>
                 </div>

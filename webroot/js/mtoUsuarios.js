@@ -60,10 +60,10 @@ function loadJSONDoc() {
         }
     }
     //Clase
-    //xhttp.open("GET", `http://daw208.sauces.local/208DWESProyectoFinal/api/buscarUsuariosPorDesc.php?descUsuario=${descripcionUsuario}`, true);
+    xhttp.open("GET", `http://daw208.sauces.local/208DWESProyectoFinal/api/buscarUsuariosPorDesc.php?descUsuario=${descripcionUsuario}`, true);
     //Casa
     //xhttp.open("GET", `http://192.168.1.107/208DWESProyectoFinal/api/buscarUsuariosPorDesc.php?descUsuario=${descripcionUsuario}`, true);
     //Explotación
-     xhttp.open("GET", `https://daw208.ieslossauces.es/208DWESProyectoFinal/api/buscarUsuariosPorDesc.php?descUsuario=${descripcionUsuario}`, true);
+    //xhttp.open("GET", `https://daw208.ieslossauces.es/208DWESProyectoFinal/api/buscarUsuariosPorDesc.php?descUsuario=${descripcionUsuario}`, true);
     xhttp.send();
 }
