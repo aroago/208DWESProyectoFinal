@@ -83,7 +83,7 @@ class DepartamentoPDO {
      * @return boolean|\Departamento Si no ha sido correcta la consulta devuelvo false, si ha sido correcta devuelvo un nuevo Departamento
      */
     public static function buscaDepartamentosPorEstado($descDepartamento = '', $sEstado = 0, $iPagina = 0){
-        $iPagina = $iPagina*3; //Variable para obtener el resultado cada vez que se pasa una pagina y hay que hacer la consulta
+        $iPagina = 2*3; //Variable para obtener el resultado cada vez que se pasa una pagina y hay que hacer la consulta
         switch ($sEstado){
             case 0:
                 $sEstado = '';

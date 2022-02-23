@@ -45,7 +45,7 @@
             <section id="features">
                 <div class="container">
                     <div class="row">
-                        <form action="index.php" method="post">
+                        <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="departamentosFormulario" class="form">
                             <div class="menu">
                                 <button class="btnlogin" name="altaDepartamento">Añadir departamento</button>
                                 <button class="btnlogin" name="importarDepartamentos">Importar departamentos</button>
@@ -67,56 +67,57 @@
                                     <label for="tipoDepartamentoBajas"><a class="rFiltrarDepartamento">Bajas</a></label>
                                 </div>
                             </div>
-                            <table class="tablaDepartamentos">
+                        </form>
+                        <table class="tablaDepartamentos">
+                            <?php
+                            if ($aDepartamentosVista != null) {
+                                ?>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Descripción</th>
+                                    <th>Fecha de alta</th>
+                                    <th>Volumen de negocio</th>
+                                    <th>Fecha de baja</th>
+                                    <th>Acciones</th>
+                                </tr>
                                 <?php
-                                if ($aDepartamentosVista != null) {
+                            }
+                            if ($aDepartamentosVista) {
+                                foreach ($aDepartamentosVista as $aDepartamento) {
                                     ?>
                                     <tr>
-                                        <th>Código</th>
-                                        <th>Descripción</th>
-                                        <th>Fecha de alta</th>
-                                        <th>Volumen de negocio</th>
-                                        <th>Fecha de baja</th>
-                                        <th>Acciones</th>
+                                        <td><?php echo $aDepartamento['codDepartamento']; ?></td>
+                                        <td><?php echo $aDepartamento['descDepartamento']; ?></td>
+                                        <td><?php echo $aDepartamento['fechaAlta']; ?></td>
+                                        <td><?php echo $aDepartamento['volumenNegocio']; ?></td>
+                                        <td><?php echo $aDepartamento['fechaBaja']; ?></td>
+                                        <td class="botonestabla">
+                                            <img src="../webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
+                                            <img src="..//webroot/img/editar.png" class="imagenboton" alt="Ojo" />
+                                            <img src="../webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
+                                        </td>
                                     </tr>
                                     <?php
                                 }
-                                if ($aDepartamentosVista) {
-                                    foreach ($aDepartamentosVista as $aDepartamento) {
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $aDepartamento['codDepartamento']; ?></td>
-                                            <td><?php echo $aDepartamento['descDepartamento']; ?></td>
-                                            <td><?php echo $aDepartamento['fechaAlta']; ?></td>
-                                            <td><?php echo $aDepartamento['volumenNegocio']; ?></td>
-                                            <td><?php echo $aDepartamento['fechaBaja']; ?></td>
-                                            <td class="botonestabla">
-                                                <img src="../webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
-                                                <img src="..//webroot/img/editar.png" class="imagenboton" alt="Ojo" />
-                                                <img src="../webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                            </table>
+                            }
+                            ?>
+                        </table>
 
-                            <div class="cajadepartamentosdos">
-                                <button type="submit" form="departamentosFormulario" name="paginaPrimera" value="paginaPrimera" class="botonespaginado">
-                                    | &#60;
-                                </button>
-                                <button type="submit" form="departamentosFormulario" name="paginaAnterior" value="paginaAnterior" class="botonespaginado">
-                                    &#60;
-                                </button>
-                                <div id="numPagina"><?php echo $_SESSION['numPaginacionDepartamentos']; ?> / <?php echo ceil($iDepartamentosTotales); ?></div>
-                                <button type="submit" form="departamentosFormulario" name="paginaSiguiente" value="paginaSiguiente" class="botonespaginado">
-                                    &#62;
-                                </button>
-                                <button type="submit" form="departamentosFormulario" name="paginaUltima" value="paginaUltima" class="botonespaginado">
-                                    &#62; |
-                                </button>
-                            </div>
+                        <div class="cajadepartamentosdos">
+                            <button type="submit" form="departamentosFormulario" name="paginaPrimera" value="paginaPrimera" class="botonespaginado">
+                                | &#60;
+                            </button>
+                            <button type="submit" form="departamentosFormulario" name="paginaAnterior" value="paginaAnterior" class="botonespaginado">
+                                &#60;
+                            </button>
+                            <div id="numPagina"><?php echo $_SESSION['numPaginacionDepartamentos']; ?> / <?php echo ceil($iDepartamentosTotales); ?></div>
+                            <button type="submit" form="departamentosFormulario" name="paginaSiguiente" value="paginaSiguiente" class="botonespaginado">
+                                &#62;
+                            </button>
+                            <button type="submit" form="departamentosFormulario" name="paginaUltima" value="paginaUltima" class="botonespaginado">
+                                &#62; |
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>

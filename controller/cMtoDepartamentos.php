@@ -15,41 +15,7 @@ if (isset($_REQUEST['volver'])) {
     header('Location: index.php');
     exit;
 }
-
-if (isset($_REQUEST['altaDepartamento'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
-    header('Location: index.php');
-    exit;
-}
-
-if (isset($_REQUEST['editarDepartamento'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
-    header('Location: index.php');
-    exit;
-}
-
-if (isset($_REQUEST['bajaFisica'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
-    header('Location: index.php');
-    exit;
-}
-
-if (isset($_REQUEST['bajaLogica'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
-    header('Location: index.php');
-    exit;
-}
-
-if (isset($_REQUEST['rehabilitar'])) {
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
-    header('Location: index.php');
-    exit;
-}
+$iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales() / 3;
 if (isset($_REQUEST['paginaPrimera'])) { //Si el usuario pulsa el boton de paginaPrimera
     $_SESSION['numPaginacionDepartamentos'] = 1; //Le situo en la primera pagina
     header('Location: index.php');
@@ -87,7 +53,7 @@ $aLista = [//Array de lista de opciones de filtrado
 ];
 
 
-$iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales() / 3;
+
 
 if (isset($_REQUEST['buscar'])) {
     $bEntradaOK = true;
