@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS DB208DWESProyectoTema5.T02_Departamento(
     T02_DescDepartamento varchar(255) NOT NULL,
     T02_FechaCreacionDepartamento int NULL,
     T02_VolumenDeNegocio float NULL,
-    T02_FechaBajaDepartamento date NULL
+    T02_FechaBajaDepartamento int NULL
 )engine=innodb;
 
 

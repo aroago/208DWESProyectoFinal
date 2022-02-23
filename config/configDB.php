@@ -24,7 +24,6 @@ define("PASSWORD", "daw2_Sauces");
 //define("PASSWORD", "P@ssw0rd");
 
 //ENTORNO DESARROLLO CLASE LOCAL
-
 /* IP del servidor y Nombre de la base de datos*/
 //define("HOST", "mysql:dbname=DB208DWESProyectoTema5;host=DAW208.sauces.local");
 /* Usuario con el que se conecta */

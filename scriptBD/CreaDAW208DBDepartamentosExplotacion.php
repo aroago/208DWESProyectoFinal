@@ -30,7 +30,7 @@ try {
                     T02_DescDepartamento varchar(255) NOT NULL,
                     T02_FechaCreacionDepartamento int NULL,
                     T02_VolumenDeNegocio float NULL,
-                    T02_FechaBajaDepartamento date NULL
+                    T02_FechaBajaDepartamento int NULL
                 )engine=innodb;
                 CONSULTA;
      $mydb->exec($consulta); //Ejecuto la consulta

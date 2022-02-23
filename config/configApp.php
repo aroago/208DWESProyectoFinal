@@ -25,6 +25,9 @@ define("OPCIONAL", 0);
 define("MIN_TAMANIO", 0);
 define("RUTA_IMG", "webroot/img/imagenUsuarios/");
 
+define("ESTADO_TODOS", 0);
+define("ESTADO_ALTAS", 1);
+define("ESTADO_BAJAS", 2);
 //Conexion con la base de datos.
 include 'config/configDB.php';
 
@@ -37,13 +40,14 @@ $aControladores = [
     'WIP' => 'controller/cWIP.php',
     'error' => 'controller/cError.php',
     'registro' => 'controller/cRegistro.php',
-    'rest'=> 'controller/cREST.php',
+    'rest' => 'controller/cREST.php',
     'miCuenta' => 'controller/cMiCuenta.php',
     'borrarCuenta' => 'controller/cBorrarCuenta.php',
     'cambiarPassword' => 'controller/cCambiarPassword.php',
     'mtoDepartamentos' => 'controller/cMtoDepartamentos.php',
     'infoAPI' => 'controller/cInfoApiPropia.php',
-    'tecnologias' => 'controller/cTecnologias.php'
+    'tecnologias' => 'controller/cTecnologias.php',
+    'mtoUsuarios' => 'controller/cMtoUsuarios.php'
 ];
 
 //Array de las vistas
@@ -55,14 +59,15 @@ $aVistas = [
     'detalle' => 'view/vDetalle.php',
     'WIP' => 'view/vWIP.php',
     'error' => 'view/vError.php',
-    'registro'=> 'view/vRegistro.php',
+    'registro' => 'view/vRegistro.php',
     'rest' => 'view/vREST.php',
     'miCuenta' => 'view/vMiCuenta.php',
     'borrarCuenta' => 'view/vBorrarCuenta.php',
     'cambiarPassword' => 'view/vCambiarPassword.php',
     'mtoDepartamentos' => 'view/vMtoDepartamentos.php',
     'infoAPI' => 'view/vInfoApiPropia.php',
-    'tecnologias' => 'view/vTecnologias.php'
+    'tecnologias' => 'view/vTecnologias.php',
+    'mtoUsuarios' => 'view/vMtoUsuarios.php'
 ];
 ?>
 

@@ -41,13 +41,13 @@ if (isset($_REQUEST['miCuenta'])) {
 if (isset($_REQUEST['mtoDepartamentos'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'mtoDepartamentos';
-
+    $_SESSION['numPaginacionDepartamentos'] = 1; //Asigno la pagina de departamentos a 1 para que sea la primera
     header('location: ./index.php');
     exit;
 }
 if (isset($_REQUEST['mtoUsuarios'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = 'WIP';
+    $_SESSION['paginaEnCurso'] = 'mtoUsuarios';
 
     header('location: ./index.php');
     exit;
