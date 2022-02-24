@@ -101,6 +101,21 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#constant_RUTA_IMG"
         },                {
+            "fqsen": "\\ESTADO_TODOS",
+            "name": "ESTADO_TODOS",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ESTADO_TODOS"
+        },                {
+            "fqsen": "\\ESTADO_ALTAS",
+            "name": "ESTADO_ALTAS",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ESTADO_ALTAS"
+        },                {
+            "fqsen": "\\ESTADO_BAJAS",
+            "name": "ESTADO_BAJAS",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ESTADO_BAJAS"
+        },                {
             "fqsen": "\\HOST",
             "name": "HOST",
             "summary": "",
@@ -306,6 +321,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/UsuarioPDO.html#method_registrarUltimaConexion"
         },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AbuscaUsuariosPorDesc\u0028\u0029",
+            "name": "buscaUsuariosPorDesc",
+            "summary": "Buscar\u0020usuario\u0020por\u0020Descripcion",
+            "url": "classes/UsuarioPDO.html#method_buscaUsuariosPorDesc"
+        },                {
             "fqsen": "\\AppError",
             "name": "AppError",
             "summary": "",
@@ -470,6 +490,21 @@ Search.appendIndex(
             "name": "buscaDepartamentoPorCod",
             "summary": "B\u00FAsqueda\u0020de\u0020departamento\u0020por\u0020c\u00F3digo.",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorCod"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorDesc\u0028\u0029",
+            "name": "buscaDepartamentosPorDesc",
+            "summary": "Metodo\u0020buscarDepartamentosPorDesc\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorEstado\u0028\u0029",
+            "name": "buscaDepartamentosPorEstado",
+            "summary": "Metodo\u0020buscaDepartamentosPorEstado\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorEstado"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosTotales\u0028\u0029",
+            "name": "buscaDepartamentosTotales",
+            "summary": "Metodo\u0020buscaDepartamentosTotales\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosTotales"
         },                {
             "fqsen": "\\Libro",
             "name": "Libro",
@@ -675,6 +710,11 @@ Search.appendIndex(
             "name": "buscarDepartamento",
             "summary": "Funcion\u0020que\u0020devuelve\u0020un\u0020objeto\u0020provincia\u0020con\u0020los\u0020datos\u0020devueltos\u0020por\u0020la\u0020API.",
             "url": "classes/REST.html#method_buscarDepartamento"
+        },                {
+            "fqsen": "\\REST\u003A\u003AbuscarDepartamentoAjeno\u0028\u0029",
+            "name": "buscarDepartamentoAjeno",
+            "summary": "",
+            "url": "classes/REST.html#method_buscarDepartamentoAjeno"
         },                {
             "fqsen": "\\",
             "name": "\\",
