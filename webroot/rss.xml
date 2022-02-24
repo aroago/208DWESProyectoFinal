@@ -57,17 +57,17 @@
             <description>Añadido Informacon Sobre las API Propia</description>
             <pubDate>Wed, 16 Feb 2022</pubDate>
         </item>
-         <item>
-            <title>Creacion de MtoDepartamentos con AJAX</title>
-            <link>https://daw208.ieslossauces.es/208DWESProyectoFinal/index.php</link>
-            <description>Se ha realizado el campo que permite buscar Departamentos por codigo de departameno</description>
-            <pubDate>Tue, 17 Feb 2022</pubDate>
-        </item>
         <item>
             <title>Creacion de MtoUsuarios con AJAX</title>
             <link>https://daw208.ieslossauces.es/208DWESProyectoFinal/index.php</link>
             <description>Se ha realizado el campo que permite buscar usuarios por descripcion de usuario y tambien se ha realizado la muestra de todos los usuarios automaticamente</description>
             <pubDate>Tue, 18 Feb 2022</pubDate>
+        </item>
+         <item>
+            <title>Creacion de MtoDepartamentos Busqueda Compleja y Paginacion</title>
+            <link>https://daw208.ieslossauces.es/208DWESProyectoFinal/index.php</link>
+            <description>Se ha realizado el campo que permite buscar Departamentos por codigo de departameno,con busqueda por estado y paginacion de 3 departamentos</description>
+            <pubDate>Wed, 23 Feb 2022</pubDate>
         </item>
     </channel>
 </rss>

@@ -83,7 +83,8 @@ class DepartamentoPDO {
      * @return boolean|\Departamento Si no ha sido correcta la consulta devuelvo false, si ha sido correcta devuelvo un nuevo Departamento
      */
     public static function buscaDepartamentosPorEstado($descDepartamento = '', $sEstado = 0, $iPagina = 0){
-        $iPagina = 2*3; //Variable para obtener el resultado cada vez que se pasa una pagina y hay que hacer la consulta
+        $cantidadMostrar = 3;
+        $primerRegistro = ($iPagina -1)* $cantidadMostrar  ; //Variable para obtener el resultado cada vez que se pasa una pagina y hay que hacer la consulta
         switch ($sEstado){
             case 0:
                 $sEstado = '';
@@ -99,7 +100,7 @@ class DepartamentoPDO {
         $aRespuesta = [];
         //Consulta SQL para validar si la descripcion del departamento existe, filtrar por estado, y comprobar el numero de pagina
         $consultaBuscarDepartamentoDesc = <<<CONSULTA
-            SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$descDepartamento}%' {$sEstado} LIMIT {$iPagina}, 3;
+            SELECT * FROM T02_Departamento WHERE T02_DescDepartamento LIKE '%{$descDepartamento}%' {$sEstado} LIMIT {$primerRegistro}, {$cantidadMostrar};
         CONSULTA;
         
         $oResultado = DBPDO::ejecutarConsulta($consultaBuscarDepartamentoDesc); //Realizo la consulta con la consulta

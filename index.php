@@ -12,10 +12,18 @@ require_once './config/configApp.php';
 //Se inicia o recupera la sesión
 session_start();
 
+
+if (isset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO'])){
+    unset($_SESSION['paginaAnterior']);
+    unset($_SESSION['paginaEnCurso']);
+    unset($_SESSION['usuarioDAW208LoginLogoutMulticapaPOO']);
+}
+
 //Para mostrar la ventana del login, llama al controlador del mismo.
 if(!isset($_SESSION['paginaEnCurso'])){
     $_SESSION['paginaEnCurso'] = 'inicioPublica';
 }
+
 if(isset($_REQUEST['tecnologias'])){ // Si desde el footer pulso el boton de tecnologias
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'tecnologias';
