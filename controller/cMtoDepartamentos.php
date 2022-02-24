@@ -39,11 +39,11 @@ if (isset($_REQUEST['paginaUltima'])) { //Si el usuario pulsa el boton de pagina
 
 
 $aErrores = [
-    "busquedaDesc" => "",
+    "descBuscarDepartamento" => "",
     'filtroDepartamentos' => null
 ];
 $aRespuestas = [
-    "busquedaDesc" => ""
+    "descBuscarDepartamento" => ""
 ];
 
 $aLista = [//Array de lista de opciones de filtrado
@@ -57,7 +57,7 @@ $aLista = [//Array de lista de opciones de filtrado
 
 if (isset($_REQUEST['buscar'])) {
     $bEntradaOK = true;
-    $aErrores['busquedaDesc'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['busquedaDesc'], 255, 1);
+    $aErrores['descBuscarDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descDepartamento'], 255, 1);
     $aErrores['filtroDepartamentos'] = validacionFormularios::validarElementoEnLista($_REQUEST['estado'], $aLista);
 
     foreach ($aErrores as $clave => $error) {
@@ -85,7 +85,7 @@ if ($bEntradaOK) {
     $_SESSION['criterioBusquedaDepartamentos']['estado'] = $sEstado; //Guardo el valor del estado en la session
 }
 $aDepartamentosVista = []; //Array para guardar el contenido de un departamento
-$oResultadoBuscar = DepartamentoPDO::buscaDepartamentosPorEstado($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? ESTADO_TODOS, $_SESSION['numPaginacionDepartamentos'] - 1); //Obtengo los datos del departamento con el metodo buscaDepartamentosPorDesc
+$oResultadoBuscar = DepartamentoPDO::buscaDepartamentosPorEstado($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? ESTADO_TODOS, $_SESSION['numPaginacionDepartamentos'] ); //Obtengo los datos del departamento con el metodo buscaDepartamentosPorDesc
 if ($oResultadoBuscar) { //Si el resultado es correcto
     foreach ($oResultadoBuscar as $aDepartamento) {//Recorro el objeto del resultado que contiene un array
         array_push($aDepartamentosVista, [//Hago uso del metodo array push para meter los valores en el array $aDepartamentosVista
