@@ -139,4 +139,39 @@ class DepartamentoPDO {
         
         return $iDepartamentos; //Devuelvo el total de departamentos
     }
+    /**
+     * Metodo altaDepartamento()
+     * 
+     * Metodo que permite dar de alta un nuevo departamento en la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @param string $descDepartamento descripcion del departamento
+     * @param float $volumenNegocio volumen de negocio del departamento
+     */
+    public static function altaDepartamento($codDepartamento, $descDepartamento, $volumenNegocio){
+        $fechaCreacionDepartamento = time(); //Variable con la fecha actual en formato int
+        //Consulta SQL para dar de alta el nuevo departamento en la base de datos
+        $consultaAltaDepartamento = <<<CONSULTA
+            INSERT INTO T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_FechaCreacionDepartamento, T02_VolumenDeNegocio) 
+            VALUES ('{$codDepartamento}','{$descDepartamento}',{$fechaCreacionDepartamento},{$volumenNegocio});
+        CONSULTA;
+            
+        $resultadoConsulta = DBPDO::ejecutarConsulta($consultaAltaDepartamento); //Ejecuto la consulta
+    }
+    /**
+     * Metodo validaCodNoExiste()
+     * 
+     * Metodo que permite validar si existe un codigo de departamento en la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @return object Si el codigo de departamento existe devuelve un objeto
+     */
+    public static function validaCodNoExiste($codDepartamento){
+        //Consulta SQL para comprobar si existe el codigo del departamento en la base de datos
+        $consultaValidarCodDepartamento = <<<CONSULTA
+            SELECT * FROM T02_Departamento WHERE T02_CodDepartamento = '{$codDepartamento}';
+        CONSULTA;
+        
+        return DBPDO::ejecutarConsulta($consultaValidarCodDepartamento)->fetchObject(); //Ejecuto la consulta y devuelve un objeto si existe el codigo de departamento
+    }
 }
