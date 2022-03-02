@@ -23,7 +23,7 @@ $aErrores = ['CodUsuario' => null, //Creo un array de errores y lo inicializo a 
  * no exista ya en la base de datos.
  */
 if (isset($_REQUEST['aceptarRegistro'])) {
-    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 255, 3, OBLIGATORIO);
+    $aErrores['CodUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['CodUsuario'], 3, 3, OBLIGATORIO);
 
     if ($aErrores['CodUsuario'] == null && UsuarioPDO::validarCodNoExiste($_REQUEST['CodUsuario']) == false) {
 

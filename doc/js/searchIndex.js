@@ -506,6 +506,16 @@ Search.appendIndex(
             "summary": "Metodo\u0020buscaDepartamentosTotales\u0028\u0029",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosTotales"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AaltaDepartamento\u0028\u0029",
+            "name": "altaDepartamento",
+            "summary": "Metodo\u0020altaDepartamento\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_altaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AvalidaCodNoExiste\u0028\u0029",
+            "name": "validaCodNoExiste",
+            "summary": "Metodo\u0020validaCodNoExiste\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_validaCodNoExiste"
+        },                {
             "fqsen": "\\Libro",
             "name": "Libro",
             "summary": "Modelo\u003A\u0020Libro",

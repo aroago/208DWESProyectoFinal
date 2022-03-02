@@ -40,9 +40,11 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-6 col-12-medium">
-                                <button class="btnlogin" name="altaDepartamento">Añadir departamento</button>
-                                <button class="btnlogin" name="importarDepartamentos">Importar departamentos</button>
-                                <button class="btnlogin" name="exportarDepartamentos">Exportar departamentos</button>
+                                <form action="index.php" method="post">
+                                    <button class="btnlogin" name="altaDepartamento">Añadir departamento</button>
+                                    <button class="btnlogin" name="importarDepartamentos">Importar departamentos</button>
+                                    <button class="btnlogin" name="exportarDepartamentos">Exportar departamentos</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -124,7 +126,7 @@
                                     &#62; |
                                 </button>
                             </div>
-                            <?php }
+                        <?php }
                         ?>
 
                     </div>

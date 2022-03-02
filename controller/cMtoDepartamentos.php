@@ -15,6 +15,12 @@ if (isset($_REQUEST['volver'])) {
     header('Location: index.php');
     exit;
 }
+if(isset($_REQUEST['altaDepartamento'])){
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso']='altaDepartamento';
+        header('Location: index.php');
+        exit;
+    }
 $iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales() / 3;
 if (isset($_REQUEST['paginaPrimera'])) { //Si el usuario pulsa el boton de paginaPrimera
     $_SESSION['numPaginacionDepartamentos'] = 1; //Le situo en la primera pagina
@@ -36,6 +42,7 @@ if (isset($_REQUEST['paginaUltima'])) { //Si el usuario pulsa el boton de pagina
     header('Location: index.php');
     exit;
 }
+
 
 
 $aErrores = [
