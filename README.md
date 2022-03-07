@@ -28,10 +28,6 @@ Hola como estas, gracias por la compra o descarga de esta aplicacion, a continua
 * 2.- En caso de ser necesario modificar el archivo configDB en config/configDB.php, para los datos asociados al acceso a la base de datos.
 * 3.- Buscar los archivos CreaDAW208DBDepartamentosDesarrollo, CargaInicialDAW208DBDepartamentosDesarrollo, BorraDAW208DBDepartamentosDesarrollo.sql en 208DWESProyectoFinal/scriptDB/nombreArchivo.sql, una vez localizado copiar y pegar el contenido en una ventana de MySQL, PHPMyAdmin o MySQL WorkBench
 
-Login : home496960781.1and1-data.host
-Usuario: u74942863-daw208
-Password: daw2_Sauces
-
 Dudas y sugerencias a mi direccion email aroa.graoma@educa.jcyl.es
 Powered By https://daw208.ieslossauces.es/
 
