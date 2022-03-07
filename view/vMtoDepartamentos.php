@@ -97,7 +97,9 @@
                                         <td><?php echo $aDepartamento['volumenNegocio']; ?></td>
                                         <td><?php echo $aDepartamento['fechaBaja']; ?></td>
                                         <td class="botonestabla">
-                                            <img src="./webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
+                                            <button type="submit" form="departamentosFormulario" name="modificar" value="<?php echo $aDepartamento['codDepartamento']; ?>" class="imagenboton">
+                                                <img src="./webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
+                                            </button>
                                             <img src="./webroot/img/ojo.png" class="imagenboton" alt="Ojo" />
                                             <img src="./webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
                                         </td>

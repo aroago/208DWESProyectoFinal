@@ -15,12 +15,19 @@ if (isset($_REQUEST['volver'])) {
     header('Location: index.php');
     exit;
 }
-if(isset($_REQUEST['altaDepartamento'])){
-        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-        $_SESSION['paginaEnCurso']='altaDepartamento';
-        header('Location: index.php');
-        exit;
-    }
+if (isset($_REQUEST['altaDepartamento'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'altaDepartamento';
+    header('Location: index.php');
+    exit;
+}
+if (isset($_REQUEST['modificar'])) { //Si el usuario pulsa el boton de modificar, mando al usuario a la pagina de consultar modificar departamento
+    $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['modificar']; //Guardo en la variable de sesion el codigo de departamento en curso para usar dicho departamento en consultar modificar departamento
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina anterior
+    $_SESSION['paginaEnCurso'] = 'consultarmodificardepartamento';
+    header('Location: index.php'); //Redireciono de nuevo a consultar modificar departamento
+    exit;
+}
 $iDepartamentosTotales = DepartamentoPDO::buscaDepartamentosTotales() / 3;
 if (isset($_REQUEST['paginaPrimera'])) { //Si el usuario pulsa el boton de paginaPrimera
     $_SESSION['numPaginacionDepartamentos'] = 1; //Le situo en la primera pagina
@@ -92,7 +99,7 @@ if ($bEntradaOK) {
     $_SESSION['criterioBusquedaDepartamentos']['estado'] = $sEstado; //Guardo el valor del estado en la session
 }
 $aDepartamentosVista = []; //Array para guardar el contenido de un departamento
-$oResultadoBuscar = DepartamentoPDO::buscaDepartamentosPorEstado($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? ESTADO_TODOS, $_SESSION['numPaginacionDepartamentos'] ); //Obtengo los datos del departamento con el metodo buscaDepartamentosPorDesc
+$oResultadoBuscar = DepartamentoPDO::buscaDepartamentosPorEstado($_SESSION['criterioBusquedaDepartamentos']['descripcionBuscada'] ?? '', $_SESSION['criterioBusquedaDepartamentos']['estado'] ?? ESTADO_TODOS, $_SESSION['numPaginacionDepartamentos']); //Obtengo los datos del departamento con el metodo buscaDepartamentosPorDesc
 if ($oResultadoBuscar) { //Si el resultado es correcto
     foreach ($oResultadoBuscar as $aDepartamento) {//Recorro el objeto del resultado que contiene un array
         array_push($aDepartamentosVista, [//Hago uso del metodo array push para meter los valores en el array $aDepartamentosVista
