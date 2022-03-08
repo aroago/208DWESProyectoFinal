@@ -4,7 +4,7 @@
  * @author: Aroa Granero Omañas
  * @version: v1
  * Created on: 22/1/2022
- * Last modification: 22/1/2022
+ * Last modification: 08/03/2022
  */
 if (isset($_REQUEST['cancelar'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
@@ -30,7 +30,7 @@ if (isset($_REQUEST['aceptarRegistro'])) {
         $aErrores['CodUsuario'] = "El nombre de usuario ya existe";
     }
 
-    $aErrores['DescUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'], 255, 3, OBLIGATORIO);
+    $aErrores['DescUsuario'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['DescUsuario'], 200, 1, OBLIGATORIO);
 
     $aErrores['Password'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);
     $aErrores['ConfirmarPassword'] = validacionFormularios::validarPassword($_REQUEST['Password'], 8, 1, 1, OBLIGATORIO);

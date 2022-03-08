@@ -15,4 +15,6 @@ define("USER", "XXX");
 /* Contraseña con la que conectarse a la base de datos */
 define("PASSWORD", "XXX");
 
+
+
 ?>
