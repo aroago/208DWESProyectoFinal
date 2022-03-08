@@ -1,9 +1,10 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author: Aroa Granero Omañas
+ * @version: v1
+ * Created on: 07/03/2022
+ * Last modification: 08/03/2022
  */
 
 if(isset($_REQUEST['volver'])){ //Si el usuario pulsa el boton de cancelar, mando al usuario a la pagina de mto departamentos
@@ -12,7 +13,7 @@ if(isset($_REQUEST['volver'])){ //Si el usuario pulsa el boton de cancelar, mand
     exit;
 }
 
-$oDepartamento = DepartamentoPDO::buscarDepartamentosPorCod($_SESSION['codDepartamentoEnCurso']); //Ejecuto la consulta que busca un departamento por el codigo que tiene la sesion
+$oDepartamento = DepartamentoPDO::buscaDepartamentoPorCod($_SESSION['codDepartamentoEnCurso']); //Ejecuto la consulta que busca un departamento por el codigo que tiene la sesion
 
 $aDepartamento = [ //Guardo los datos del departamento en un array para mostrarlos
     'codDepartamento' => $oDepartamento->getCodDepartamento(),
@@ -50,5 +51,4 @@ if($entradaOK){//Si la entrada es correcta
     exit;
 }
 
-require_once $vistas['layout']; //Cargo la pagina de ConsultaModificarDepartamento
-?>
+require_once $aVistas['layout']; //Cargo la pagina de ConsultaModificarDepartamento

@@ -24,7 +24,14 @@ if (isset($_REQUEST['altaDepartamento'])) {
 if (isset($_REQUEST['modificar'])) { //Si el usuario pulsa el boton de modificar, mando al usuario a la pagina de consultar modificar departamento
     $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['modificar']; //Guardo en la variable de sesion el codigo de departamento en curso para usar dicho departamento en consultar modificar departamento
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina anterior
-    $_SESSION['paginaEnCurso'] = 'consultarmodificardepartamento';
+    $_SESSION['paginaEnCurso'] = 'consultarModificarDepartamento';
+    header('Location: index.php'); //Redireciono de nuevo a consultar modificar departamento
+    exit;
+}
+if (isset($_REQUEST['eliminar'])) { //Si el usuario pulsa el boton de modificar, mando al usuario a la pagina de consultar modificar departamento
+    $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['eliminar']; //Guardo en la variable de sesion el codigo de departamento en curso para usar dicho departamento en consultar modificar departamento
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso']; //Asigno a la pagina en curso la pagina anterior
+    $_SESSION['paginaEnCurso'] = 'eliminarDeparamento';
     header('Location: index.php'); //Redireciono de nuevo a consultar modificar departamento
     exit;
 }

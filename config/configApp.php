@@ -49,7 +49,8 @@ $aControladores = [
     'tecnologias' => 'controller/cTecnologias.php',
     'mtoUsuarios' => 'controller/cMtoUsuarios.php',
     'altaDepartamento' => 'controller/cAltaDepartamento.php',
-    'consultarModificarDepartamentos' => 'controller/cConsultarModificarDepartamentos'
+    'consultarModificarDepartamento' => 'controller/cConsultarModificarDepartamentos.php',
+    'eliminarDeparamento' => 'controller/cEliminarDepartamento.php'
 ];
 
 //Array de las vistas
@@ -71,7 +72,8 @@ $aVistas = [
     'tecnologias' => 'view/vTecnologias.php',
     'mtoUsuarios' => 'view/vMtoUsuarios.php',
     'altaDepartamento' => 'view/vAltaDepartamento.php',
-    'consultarModificarDepartamentos' => 'view/vConsultarModificarDepartamentos'
+    'consultarModificarDepartamento' => 'view/vConsultarModificarDepartamentos.php',
+    'eliminarDeparamento' => 'view/vEliminarDepartamento.php'
 ];
 ?>
 

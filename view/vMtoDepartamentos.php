@@ -97,11 +97,17 @@
                                         <td><?php echo $aDepartamento['volumenNegocio']; ?></td>
                                         <td><?php echo $aDepartamento['fechaBaja']; ?></td>
                                         <td class="botonestabla">
-                                            <button type="submit" form="departamentosFormulario" name="modificar" value="<?php echo $aDepartamento['codDepartamento']; ?>" class="imagenboton">
-                                                <img src="./webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
-                                            </button>
-                                            <img src="./webroot/img/ojo.png" class="imagenboton" alt="Ojo" />
-                                            <img src="./webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
+                                            <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="departamentosFormulario" >
+                                                <button type="submit" name="modificar" value="<?php echo $aDepartamento['codDepartamento']; ?>">
+                                                    <img src="./webroot/img/editar.png" class="imagenboton" alt="Lapiz" />
+                                                </button>
+                                                <button type="submit" name="baja" value="<?php echo $aDepartamento['codDepartamento']; ?>">
+                                                    <img src="./webroot/img/ojo.png" class="imagenboton" alt="ojo" />
+                                                </button>
+                                                <button type="submit" name="eliminar" value="<?php echo $aDepartamento['codDepartamento']; ?>">
+                                                    <img src="./webroot/img/eliminar.png" class="imagenboton" alt="Papelera" />
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     <?php

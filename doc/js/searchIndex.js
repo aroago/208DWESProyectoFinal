@@ -516,6 +516,16 @@ Search.appendIndex(
             "summary": "Metodo\u0020validaCodNoExiste\u0028\u0029",
             "url": "classes/DepartamentoPDO.html#method_validaCodNoExiste"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AmodificaDepartamento\u0028\u0029",
+            "name": "modificaDepartamento",
+            "summary": "Metodo\u0020modificaDepartamento\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_modificaDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbajaFisicaDepartamento\u0028\u0029",
+            "name": "bajaFisicaDepartamento",
+            "summary": "Metodo\u0020bajaFisicaDepartamento\u0028\u0029",
+            "url": "classes/DepartamentoPDO.html#method_bajaFisicaDepartamento"
+        },                {
             "fqsen": "\\Libro",
             "name": "Libro",
             "summary": "Modelo\u003A\u0020Libro",

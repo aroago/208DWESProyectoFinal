@@ -199,5 +199,20 @@ class DepartamentoPDO {
 
         return DBPDO::ejecutarConsulta($consultaModificarDepartamento); //Ejecuto y devuelvo el resultado de la consulta    
     }
-
+    /**
+     * Metodo bajaFisicaDepartamento()
+     * 
+     * Metodo que permite eliminar un departamento de la base de datos
+     * 
+     * @param string $codDepartamento codigo del departamento
+     * @return PDOStatment El resultado de la consulta
+     */
+    public static function bajaFisicaDepartamento($codDepartamento){
+        //Consulta SQL para eliminar un departamento de la base de datos
+        $consultaEliminarCodDepartamento = <<<CONSULTA
+            DELETE FROM T02_Departamento WHERE T02_CodDepartamento = '{$codDepartamento}';
+        CONSULTA;
+            
+        return DBPDO::ejecutarConsulta($consultaEliminarCodDepartamento); //Ejecuto y devuelvo el resultado de la consulta
+    }
 }
